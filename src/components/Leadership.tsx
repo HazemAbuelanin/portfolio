@@ -1,36 +1,50 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, GraduationCap, Lightbulb, Target } from "lucide-react";
+import { Users, GraduationCap, Lightbulb, Target, Code, BookOpen } from "lucide-react";
 
 const leadership = [
   {
-    title: "Founded Autonomous Shoubra Racing Team",
-    description: "Established the first autonomous vehicle team at Benha University - Shoubra Faculty of Engineering, creating a foundation for autonomous vehicle research and development.",
+    title: "Technical Team Founder",
+    description: "Founded and established multiple technical teams including autonomous vehicle racing teams, coding clubs, and research groups, creating platforms for student innovation and learning.",
     icon: Lightbulb,
     color: "from-blue-500 to-indigo-500",
-    impact: "First of its kind"
+    impact: "3 teams established"
   },
   {
-    title: "Multi-Team Formation",
-    description: "Initiated and led the formation of multiple autonomous racing teams, including Shell Eco-marathon, F1TENTH, and Formula Student Driverless teams.",
-    icon: Target,
-    color: "from-purple-500 to-pink-500",
-    impact: "3 active teams"
-  },
-  {
-    title: "Comprehensive Training Program",
-    description: "Designed and conducted a comprehensive learning program covering fundamentals of autonomy, embedded systems, and software development.",
+    title: "Student Mentorship Program",
+    description: "Developed and led comprehensive mentorship programs for junior students, covering programming fundamentals, career guidance, and technical skill development.",
     icon: GraduationCap,
     color: "from-emerald-500 to-teal-500",
-    impact: "30+ members trained"
+    impact: "50+ students mentored"
   },
   {
-    title: "Student Mentorship",
-    description: "Mentored junior students by providing guidance and training in key autonomy concepts, autonomous stacks, programming, ROS, and system integration.",
-    icon: Users,
+    title: "Open Source Community",
+    description: "Built and maintained open source projects, fostering collaboration among developers and contributing to the broader tech community through code and documentation.",
+    icon: Code,
+    color: "from-purple-500 to-pink-500",
+    impact: "Multiple repositories"
+  },
+  {
+    title: "Workshop & Training Leader",
+    description: "Organized and conducted technical workshops on web development, mobile app development, and emerging technologies for student organizations and tech communities.",
+    icon: BookOpen,
     color: "from-orange-500 to-red-500",
-    impact: "Ongoing mentorship"
+    impact: "20+ workshops delivered"
+  },
+  {
+    title: "Project Management",
+    description: "Led cross-functional teams in various technical projects, coordinating between developers, designers, and stakeholders to deliver successful outcomes on time.",
+    icon: Target,
+    color: "from-green-500 to-emerald-500",
+    impact: "10+ projects completed"
+  },
+  {
+    title: "Peer Collaboration",
+    description: "Facilitated knowledge sharing sessions, code reviews, and collaborative learning environments that enhanced team productivity and individual growth.",
+    icon: Users,
+    color: "from-indigo-500 to-purple-500",
+    impact: "Team collaboration"
   }
 ];
 
@@ -40,10 +54,10 @@ const Leadership = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            Leadership & Impact
+            Leadership & Community Impact
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Building teams, fostering innovation, and mentoring the next generation of engineers
+            Building teams, fostering collaboration, and empowering others through technology
           </p>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto mt-6"></div>
         </div>

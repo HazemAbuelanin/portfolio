@@ -1,32 +1,44 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Cpu, Car, Brain } from "lucide-react";
+import { Code, Globe, Smartphone, Database, Brain, Wrench } from "lucide-react";
 
 const skillCategories = [
   {
+    title: "Frontend Development",
+    icon: Globe,
+    color: "from-blue-500 to-cyan-500",
+    skills: ["React", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS", "Next.js", "Vue.js"]
+  },
+  {
+    title: "Backend Development",
+    icon: Database,
+    color: "from-emerald-500 to-teal-500",
+    skills: ["Node.js", "Python", "Java", "Express.js", "FastAPI", "RESTful APIs", "GraphQL"]
+  },
+  {
+    title: "Mobile Development",
+    icon: Smartphone,
+    color: "from-purple-500 to-pink-500",
+    skills: ["React Native", "Flutter", "iOS Development", "Android Development", "Cross-platform"]
+  },
+  {
     title: "Programming Languages",
     icon: Code,
-    color: "from-blue-500 to-cyan-500",
-    skills: ["Python", "C++", "C", "MATLAB", "JavaScript", "Embedded C"]
-  },
-  {
-    title: "Autonomous Systems",
-    icon: Brain,
-    color: "from-purple-500 to-pink-500",
-    skills: ["ROS/ROS2", "SLAM", "Path Planning", "Computer Vision", "Sensor Fusion", "Control Theory"]
-  },
-  {
-    title: "Hardware & Embedded",
-    icon: Cpu,
-    color: "from-emerald-500 to-teal-500",
-    skills: ["STM32", "Arduino", "PCB Design", "CAN Bus", "Real-time Systems", "LIDAR Integration"]
-  },
-  {
-    title: "Automotive Technology",
-    icon: Car,
     color: "from-orange-500 to-red-500",
-    skills: ["Vehicle Dynamics", "Autonomous Racing", "ECU Programming", "Motorsports Engineering"]
+    skills: ["Python", "JavaScript", "TypeScript", "Java", "C++", "C", "Go", "SQL"]
+  },
+  {
+    title: "AI & Machine Learning",
+    icon: Brain,
+    color: "from-indigo-500 to-purple-500",
+    skills: ["TensorFlow", "PyTorch", "OpenCV", "Computer Vision", "NLP", "Deep Learning", "Data Science"]
+  },
+  {
+    title: "Tools & Technologies",
+    icon: Wrench,
+    color: "from-green-500 to-emerald-500",
+    skills: ["Git", "Docker", "AWS", "Linux", "PostgreSQL", "MongoDB", "Redis", "CI/CD"]
   }
 ];
 
@@ -39,12 +51,12 @@ const Skills = () => {
             Technical Skills
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Comprehensive expertise across the autonomous vehicle technology stack
+            Comprehensive expertise across the full technology stack
           </p>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto mt-6"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
