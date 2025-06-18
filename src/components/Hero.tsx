@@ -5,12 +5,12 @@ import { Download, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden pt-20">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden pt-20">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -18,52 +18,63 @@ const Hero = () => {
           <div className="text-center lg:text-left space-y-8">
             <div className="space-y-6">
               <div className="inline-block">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium">
                   👋 Welcome to my portfolio
                 </span>
               </div>
               
-              <h1 className="text-4xl lg:text-6xl font-bold text-slate-800 leading-tight">
-                Hi, I'm{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
+                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   Hazem Abuelanin
                 </span>
               </h1>
               
-              <h2 className="text-xl lg:text-2xl text-slate-600 font-light">
+              <h2 className="text-xl lg:text-2xl text-gray-300 font-light">
                 Computer Engineering Student & Full-Stack Developer
               </h2>
               
-              <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+              <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
                 {/* EDIT HERE: Change your introduction text */}
-                Passionate about creating innovative digital solutions. I specialize in 
-                web development, AI applications, and bringing ideas to life through code.
+                Passionate computer engineering student specializing in web development, AI applications, 
+                and autonomous systems. I build innovative solutions that bridge theory with real-world impact.
               </p>
             </div>
             
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               {/* EDIT HERE: Update these links with your actual URLs */}
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <Download className="mr-2 h-5 w-5" />
-                Download CV
+                Download Resume
               </Button>
-              <Button variant="outline" className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 rounded-lg transition-all duration-300">
-                <Github className="mr-2 h-5 w-5" />
+              <Button 
+                variant="outline" 
+                className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-6 py-3 rounded-lg transition-all duration-300"
+                onClick={() => window.open('https://github.com/HazemAbuelanin', '_blank')}
+              >
+                <Github className="mr-2 h-5 w-5 text-gray-300" />
                 GitHub
               </Button>
-              <Button variant="outline" className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 rounded-lg transition-all duration-300">
-                <Linkedin className="mr-2 h-5 w-5" />
+              <Button 
+                variant="outline" 
+                className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-6 py-3 rounded-lg transition-all duration-300"
+                onClick={() => window.open('https://www.linkedin.com/in/hazem-abuelanin-751b4421b/', '_blank')}
+              >
+                <Linkedin className="mr-2 h-5 w-5 text-gray-300" />
                 LinkedIn
               </Button>
-              <Button variant="outline" className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 rounded-lg transition-all duration-300">
-                <Mail className="mr-2 h-5 w-5" />
+              <Button 
+                variant="outline" 
+                className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-6 py-3 rounded-lg transition-all duration-300"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Mail className="mr-2 h-5 w-5 text-gray-300" />
                 Contact
               </Button>
             </div>
           </div>
           
           <div className="flex justify-center lg:justify-end">
-            <Card className="p-4 bg-white/80 backdrop-blur-sm border-0 shadow-2xl hover:shadow-3xl transition-all duration-300 rounded-2xl">
+            <Card className="p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 shadow-2xl hover:shadow-3xl transition-all duration-300 rounded-2xl">
               {/* EDIT HERE: Replace this placeholder with your actual photo */}
               {/* To add your photo: 
                   1. Upload your image to the public folder 
