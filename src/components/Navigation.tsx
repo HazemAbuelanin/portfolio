@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +50,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? "bg-white/95 backdrop-blur-sm shadow-lg" 
+        ? "bg-gray-900/95 backdrop-blur-sm shadow-lg border-b border-gray-700" 
         : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6">
@@ -58,7 +58,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="font-bold text-xl">
             <span className={`transition-colors duration-300 ${
-              scrolled ? "text-slate-800" : "text-white"
+              scrolled ? "text-white" : "text-white"
             }`}>
               Hazem Abuelanin
             </span>
@@ -70,29 +70,20 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 relative ${
+                className={`text-sm font-medium transition-colors hover:text-blue-400 relative ${
                   activeSection === item.id
-                    ? "text-blue-600"
+                    ? "text-blue-400"
                     : scrolled 
-                      ? "text-slate-600" 
+                      ? "text-gray-300" 
                       : "text-white/90"
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600 rounded-full"></div>
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-full"></div>
                 )}
               </button>
             ))}
-            
-            {/* EDIT HERE: Update CV download link */}
-            <Button 
-              size="sm"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              CV
-            </Button>
           </div>
 
           {/* Mobile Navigation Toggle */}
@@ -100,7 +91,7 @@ const Navigation = () => {
             variant="ghost"
             size="sm"
             className={`md:hidden transition-colors ${
-              scrolled ? "text-slate-800 hover:bg-slate-100" : "text-white hover:bg-white/10"
+              scrolled ? "text-white hover:bg-gray-800" : "text-white hover:bg-white/10"
             }`}
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -110,29 +101,20 @@ const Navigation = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 bg-white/95 backdrop-blur-sm border-t border-gray-200 rounded-b-lg shadow-lg">
+          <div className="md:hidden py-4 bg-gray-900/95 backdrop-blur-sm border-t border-gray-700 rounded-b-lg shadow-lg">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-colors hover:text-blue-600 hover:bg-blue-50 ${
+                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-colors hover:text-blue-400 hover:bg-blue-500/10 ${
                   activeSection === item.id
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-slate-600"
+                    ? "text-blue-400 bg-blue-500/10"
+                    : "text-gray-300"
                 }`}
               >
                 {item.label}
               </button>
             ))}
-            <div className="px-4 pt-2">
-              <Button 
-                size="sm"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </Button>
-            </div>
           </div>
         )}
       </div>
