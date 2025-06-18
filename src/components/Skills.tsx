@@ -44,14 +44,14 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section className="py-20 bg-slate-50">
+    <section id="skills" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
             Technical Skills
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Comprehensive expertise across the full technology stack
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            Comprehensive expertise across the technology stack
           </p>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto mt-6"></div>
         </div>

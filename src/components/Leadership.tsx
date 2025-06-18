@@ -50,14 +50,14 @@ const leadership = [
 
 const Leadership = () => {
   return (
-    <section className="py-20 bg-slate-900 text-white">
+    <section id="leadership" className="py-20 bg-slate-900 text-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             Leadership & Community Impact
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Building teams, fostering collaboration, and empowering others through technology
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Building teams and empowering others through technology
           </p>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto mt-6"></div>
         </div>

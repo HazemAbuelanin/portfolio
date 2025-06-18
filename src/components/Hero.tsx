@@ -1,11 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Download, Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden pt-16">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent animate-pulse"></div>
       </div>
@@ -24,9 +23,8 @@ const Hero = () => {
             </div>
             
             <p className="text-lg lg:text-xl text-blue-100 leading-relaxed max-w-2xl">
-              Passionate computer engineering student with expertise in software development, 
-              embedded systems, and emerging technologies. Building innovative solutions across 
-              web development, autonomous systems, and research projects.
+              Passionate about building innovative solutions across web development, 
+              AI, and embedded systems. Ready to tackle tomorrow's challenges today.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
