@@ -3,18 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 
 const Contact = () => {
-  // EDIT HERE: Handle form submission - connect to your preferred service (Formspree, Netlify Forms, etc.)
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your form submission logic here
     console.log("Form submitted");
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-800 via-blue-900 to-indigo-900 text-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -39,14 +37,13 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
-              {/* EDIT HERE: Update your contact information */}
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
                   <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <p className="font-medium text-blue-100">Email</p>
-                  <p className="text-blue-200">hazem@example.com</p> {/* REPLACE: Add your email */}
+                  <p className="text-blue-200">hazem.abuelanin@gmail.com</p>
                 </div>
               </div>
 
@@ -56,38 +53,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium text-blue-100">Phone</p>
-                  <p className="text-blue-200">+20 123 456 7890</p> {/* REPLACE: Add your phone */}
+                  <p className="text-blue-200">01121909182</p>
                 </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <p className="font-medium text-blue-100">Location</p>
-                  <p className="text-blue-200">Cairo, Egypt</p> {/* REPLACE: Add your location */}
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="pt-8">
-              <h4 className="font-semibold text-blue-100 mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
-                {/* EDIT HERE: Update social media links */}
-                <Button variant="outline" size="sm" className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
-                  <Github className="h-4 w-4 mr-2" />
-                  GitHub
-                </Button>
-                <Button variant="outline" size="sm" className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
-                  <Linkedin className="h-4 w-4 mr-2" />
-                  LinkedIn
-                </Button>
-                <Button variant="outline" size="sm" className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
-                  <Twitter className="h-4 w-4 mr-2" />
-                  Twitter
-                </Button>
               </div>
             </div>
           </div>
@@ -97,7 +64,6 @@ const Contact = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6 text-white">Send a Message</h3>
               
-              {/* EDIT HERE: Connect form to your backend/service */}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
