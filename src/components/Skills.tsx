@@ -1,7 +1,6 @@
 
 import { Badge } from "@/components/ui/badge";
 
-// EDIT HERE: Add, remove, or modify your skills
 const skills = [
   "Python", "JavaScript", "TypeScript", "React", "Node.js", "C++", "Java",
   "TensorFlow", "PyTorch", "OpenCV", "Machine Learning", "Computer Vision",

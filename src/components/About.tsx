@@ -40,7 +40,7 @@ const About = () => {
             </Card>
 
             <div className="space-y-6">
-              <Card className="p-6 border border-gray-700 bg-gradient-to-br from-gray-700/30 to-slate-700/30 hover:shadow-lg transition-all duration-300">
+              <Card className="p-6 border border-gray-700 bg-gradient-to-br from-blue-900/30 to-slate-700/30 hover:shadow-lg transition-all duration-300">
                 <CardContent className="pt-0">
                   <div className="flex items-center mb-4">
                     <Target className="h-5 w-5 text-blue-400 mr-2" />
@@ -56,7 +56,7 @@ const About = () => {
               <Card className="p-6 border border-gray-700 bg-gradient-to-br from-slate-700/30 to-gray-700/30 hover:shadow-lg transition-all duration-300">
                 <CardContent className="pt-0">
                   <div className="flex items-center mb-4">
-                    <Heart className="h-5 w-5 text-purple-400 mr-2" />
+                    <Heart className="h-5 w-5 text-blue-400 mr-2" />
                     <h4 className="font-bold text-white">Interests</h4>
                   </div>
                   <p className="text-gray-300 text-sm">
