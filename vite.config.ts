@@ -27,11 +27,15 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true,
+    sourcemap: false, // Disable for production
+    minify: true,
     rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      },
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      }
     },
   },
+  
+  // Ensure proper asset handling
+  publicDir: 'public',
 }));
