@@ -1,31 +1,9 @@
 
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Send } from "lucide-react";
-import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Mail, Github, Linkedin, MapPin } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const { name, email, message } = formData;
-    const subject = `Contact from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    window.location.href = `mailto:hazem.abuelanin@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
       <div className="container mx-auto px-6">
@@ -34,87 +12,87 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Let's discuss opportunities in robotics, AI, and autonomous systems
+            Ready to collaborate on exciting projects or discuss opportunities in
+            autonomous systems and AI? Let's connect!
           </p>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-8"></div>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8 bg-gray-800/50 border-gray-700">
-              <CardContent className="pt-0">
-                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-                
-                <div className="space-y-6">
-                  <div className="flex items-center">
-                    <Mail className="h-6 w-6 text-blue-400 mr-4" />
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <Card className="bg-gray-800/50 border-gray-700">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-4">
+                    <Mail className="h-8 w-8 text-blue-400" />
                     <div>
-                      <p className="text-gray-300 font-medium">Email</p>
-                      <a href="mailto:hazem.abuelanin@gmail.com" className="text-blue-400 hover:text-blue-300">
-                        hazem.abuelanin@gmail.com
-                      </a>
+                      <h3 className="text-white font-semibold">Email</h3>
+                      <p className="text-gray-300">hazem.abuelanin@example.com</p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-center">
-                    <Phone className="h-6 w-6 text-blue-400 mr-4" />
-                    <div>
-                      <p className="text-gray-300 font-medium">Phone</p>
-                      <a href="tel:01121909182" className="text-blue-400 hover:text-blue-300">
-                        01121909182
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
 
-            <Card className="p-8 bg-gray-800/50 border-gray-700">
-              <CardContent className="pt-0">
-                <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
+              <Card className="bg-gray-800/50 border-gray-700">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-4">
+                    <MapPin className="h-8 w-8 text-purple-400" />
+                    <div>
+                      <h3 className="text-white font-semibold">Location</h3>
+                      <p className="text-gray-300">Available for Remote Work</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="flex space-x-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="border-gray-600 text-gray-300 hover:bg-gray-800"
+                  onClick={() => window.open('https://github.com/HazemAbuelanin', '_blank')}
+                >
+                  <Github className="h-5 w-5" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="border-gray-600 text-gray-300 hover:bg-gray-800"
+                  onClick={() => window.open('https://linkedin.com/in/hazem-abuelanin', '_blank')}
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+
+            <Card className="bg-gray-800/50 border-gray-700">
+              <CardContent className="p-6">
+                <form className="space-y-4">
                   <div>
+                    <label className="block text-white font-medium mb-2">Name</label>
                     <input
                       type="text"
-                      name="name"
+                      className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-blue-400 focus:outline-none"
                       placeholder="Your Name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
                     />
                   </div>
-                  
                   <div>
+                    <label className="block text-white font-medium mb-2">Email</label>
                     <input
                       type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-blue-400 focus:outline-none"
+                      placeholder="your.email@example.com"
                     />
                   </div>
-                  
                   <div>
+                    <label className="block text-white font-medium mb-2">Message</label>
                     <textarea
-                      name="message"
-                      placeholder="Your Message"
-                      required
                       rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 resize-none"
+                      className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-blue-400 focus:outline-none"
+                      placeholder="Your message..."
                     />
                   </div>
-                  
-                  <Button
-                    type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3"
-                  >
-                    <Send className="mr-2 h-5 w-5" />
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
                     Send Message
                   </Button>
                 </form>
