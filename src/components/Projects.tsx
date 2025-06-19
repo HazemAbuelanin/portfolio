@@ -1,8 +1,7 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Car, Globe, Smartphone, Brain, Database, Code, Star, Calendar } from "lucide-react";
+import { Github, Car, Globe, Smartphone, Brain, Database, Code, Star, Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 // EDIT HERE: Add, remove, or modify your projects
@@ -167,19 +166,6 @@ const Projects = () => {
                         </Badge>
                       ))}
                     </div>
-                    
-                    <div className="flex gap-3 pt-2">
-                      <Button size="sm" variant="outline" className="flex-1 hover:bg-gray-700 text-gray-200 border-gray-600"
-                              onClick={(e) => { e.stopPropagation(); /* Add GitHub link */ }}>
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </Button>
-                      <Button size="sm" className={`flex-1 bg-gradient-to-r ${project.color} hover:opacity-90 text-white border-0`}
-                              onClick={(e) => { e.stopPropagation(); /* Add demo link */ }}>
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </Button>
-                    </div>
                   </CardContent>
                 </Card>
               );
@@ -226,19 +212,6 @@ const Projects = () => {
                         </Badge>
                       )}
                     </div>
-                    
-                    <div className="flex gap-2 pt-1">
-                      <Button size="sm" variant="outline" className="flex-1 text-xs hover:bg-gray-700 text-gray-200 border-gray-600"
-                              onClick={(e) => { e.stopPropagation(); /* Add GitHub link */ }}>
-                        <Github className="mr-1 h-3 w-3" />
-                        Code
-                      </Button>
-                      <Button size="sm" variant="outline" className="flex-1 text-xs hover:bg-gray-700 text-gray-200 border-gray-600"
-                              onClick={(e) => { e.stopPropagation(); /* Add demo link */ }}>
-                        <ExternalLink className="mr-1 h-3 w-3" />
-                        Demo
-                      </Button>
-                    </div>
                   </CardContent>
                 </Card>
               );
@@ -249,7 +222,10 @@ const Projects = () => {
         {/* Call to action */}
         <div className="text-center mt-16">
           <p className="text-gray-300 mb-6">Want to see more of my work?</p>
-          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3">
+          <Button 
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3"
+            onClick={() => window.open('https://github.com/HazemAbuelanin', '_blank')}
+          >
             <Github className="mr-2 h-5 w-5" />
             View All on GitHub
           </Button>

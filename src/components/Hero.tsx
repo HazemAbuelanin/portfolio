@@ -17,12 +17,6 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left space-y-8">
             <div className="space-y-6">
-              <div className="inline-block">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                  👋 Welcome to my portfolio
-                </span>
-              </div>
-              
               <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   Hazem Abuelanin

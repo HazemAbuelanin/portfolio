@@ -1,4 +1,3 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -124,12 +123,8 @@ const ProjectDetail = () => {
           
           <div className="flex gap-4">
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
-            </Button>
-            <Button variant="outline" className="border-gray-600 text-white hover:bg-gray-800">
               <Github className="mr-2 h-4 w-4" />
-              View Code
+              View Source Code
             </Button>
           </div>
         </div>
@@ -187,10 +182,6 @@ const ProjectDetail = () => {
                 <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
                 <div className="space-y-3">
                   <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    View Live Demo
-                  </Button>
-                  <Button variant="outline" className="w-full border-gray-600 text-white hover:bg-gray-700">
                     <Github className="mr-2 h-4 w-4" />
                     View Source Code
                   </Button>
