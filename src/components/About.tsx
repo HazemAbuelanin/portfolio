@@ -1,49 +1,70 @@
 
+import { Card, CardContent } from "@/components/ui/card";
+import { Code, Target, Heart } from "lucide-react";
+
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-900">
+    <section id="about" className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             About Me
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Passionate computer engineering student with a focus on cutting-edge technologies
-            that shape the future of autonomous systems and artificial intelligence.
+            Computer Engineering student with expertise in autonomous systems, robotics and AI applications. 
+            Passionate about creating innovative solutions that make a real impact in the world of technology.
           </p>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-8"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src="/placeholder.svg"
-                alt="Hazem Abuelanin"
-                className="w-full rounded-lg shadow-2xl"
-              />
-            </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="md:col-span-2 p-8 border border-gray-700 bg-gradient-to-br from-gray-800 to-slate-800 hover:shadow-lg transition-all duration-300">
+              <CardContent className="pt-0">
+                <div className="flex items-center mb-6">
+                  <Code className="h-6 w-6 text-blue-400 mr-3" />
+                  <h3 className="text-2xl font-bold text-white">My Journey</h3>
+                </div>
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  As a Senior Computer Engineering student at Cairo University, my journey has been defined by 
+                  a passion for autonomous systems and robotics. I've participated in international competitions 
+                  like Shell Eco-marathon, where innovation meets real-world application.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  My expertise spans across full-stack development, machine learning, and autonomous vehicle systems. 
+                  I'm particularly fascinated by Physical AI and how intelligent systems can interact with the physical 
+                  world. My goal is to contribute to the advancement of robotics and autonomous technologies that will 
+                  shape our future.
+                </p>
+              </CardContent>
+            </Card>
+
             <div className="space-y-6">
-              <p className="text-gray-300 leading-relaxed">
-                I'm a dedicated computer engineering student with a passion for pushing the boundaries
-                of what's possible with autonomous systems and artificial intelligence. My journey in
-                technology is driven by a desire to create solutions that make a real impact.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                With hands-on experience in robotics, machine learning, and embedded systems, I'm
-                constantly exploring new technologies and methodologies to solve complex problems
-                in the field of autonomous systems.
-              </p>
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <h3 className="text-2xl font-bold text-blue-400">10+</h3>
-                  <p className="text-gray-300">Projects Completed</p>
-                </div>
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <h3 className="text-2xl font-bold text-purple-400">3+</h3>
-                  <p className="text-gray-300">Years Experience</p>
-                </div>
-              </div>
+              <Card className="p-6 border border-gray-700 bg-gradient-to-br from-gray-700/30 to-slate-700/30 hover:shadow-lg transition-all duration-300">
+                <CardContent className="pt-0">
+                  <div className="flex items-center mb-4">
+                    <Target className="h-5 w-5 text-blue-400 mr-2" />
+                    <h4 className="font-bold text-white">Goals</h4>
+                  </div>
+                  <p className="text-gray-300 text-sm">
+                    Leading innovation in autonomous systems, robotics, and Physical AI to create solutions 
+                    that transform how we interact with technology.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 border border-gray-700 bg-gradient-to-br from-slate-700/30 to-gray-700/30 hover:shadow-lg transition-all duration-300">
+                <CardContent className="pt-0">
+                  <div className="flex items-center mb-4">
+                    <Heart className="h-5 w-5 text-purple-400 mr-2" />
+                    <h4 className="font-bold text-white">Interests</h4>
+                  </div>
+                  <p className="text-gray-300 text-sm">
+                    Autonomous Vehicles, Robotics, Physical AI, Machine Learning, Web Development, 
+                    and Competitive Programming.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
