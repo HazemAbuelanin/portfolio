@@ -65,7 +65,7 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end">
             <Card className="p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 shadow-2xl hover:shadow-3xl transition-all duration-300 rounded-2xl">
               <img 
-                src="/lovable-uploads/f65349ee-5df9-41e8-88cb-9179a45057b5.png" 
+                src={`${import.meta.env.BASE_URL}lovable-uploads/f65349ee-5df9-41e8-88cb-9179a45057b5.png`} 
                 alt="Hazem Abuelanin" 
                 className="w-80 h-80 object-cover rounded-xl"
               />
