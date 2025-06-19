@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,11 +6,9 @@
     <title>Hazem Abuelanin - Portfolio</title>
     <meta name="description" content="Computer Engineering student specializing in autonomous systems, robotics and AI" />
     <meta name="author" content="Hazem Abuelanin" />
-
     <meta property="og:title" content="Hazem Abuelanin - Portfolio" />
     <meta property="og:description" content="Computer Engineering student specializing in autonomous systems, robotics and AI" />
     <meta property="og:type" content="website" />
-
     <style>
       /* Fallback styles in case CSS fails to load */
       .loading-fallback {
@@ -25,7 +22,6 @@
       }
     </style>
   </head>
-
   <body>
     <div id="root">
       <div class="loading-fallback">
@@ -33,28 +29,7 @@
       </div>
     </div>
     
-    <script>
-      // Add error handling for script loading
-      window.addEventListener('error', function(e) {
-        console.error('Global error:', e.error);
-        const root = document.getElementById('root');
-        if (root && !root.querySelector('.react-app')) {
-          root.innerHTML = '<div style="padding: 20px; color: red; font-family: monospace;"><h1>Loading Error</h1><p>Failed to load application resources</p><pre>' + e.message + '</pre></div>';
-        }
-      });
-
-      // Check if scripts load properly
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          const root = document.getElementById('root');
-          if (root && root.innerHTML.includes('Loading...')) {
-            console.error('App failed to initialize after 5 seconds');
-            root.innerHTML = '<div style="padding: 20px; color: red; font-family: monospace;"><h1>Initialization Error</h1><p>Application failed to start. Please check the console for errors.</p></div>';
-          }
-        }, 5000);
-      });
-    </script>
-    
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- REMOVE THE MANUAL SCRIPT TAG - Let Vite inject it during build -->
+    <!-- This line will be automatically added by Vite during build process -->
   </body>
 </html>
