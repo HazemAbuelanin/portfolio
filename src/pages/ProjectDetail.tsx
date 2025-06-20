@@ -15,6 +15,7 @@ const projectsData = {
     date: "2024",
     status: "2nd Place Egypt",
     video: "",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>In the EVER 2024 Electric Vehicle Rally, I led the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
@@ -38,6 +39,7 @@ const projectsData = {
     date: "2024",
     status: "3rd Place Egypt",
     video: "",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>As part of the EVER 2024 Milestone Challenge, I led the development of a modular and robust autonomous driving software stack within the ROS Noetic + CoppeliaSim simulation environment. The challenge involved completing three progressive milestones that cumulatively assessed system-level autonomy.</p>
@@ -61,6 +63,7 @@ const projectsData = {
     date: "2025",
     status: "2nd Place Worldwide",
     video: "",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>As founder and lead engineer, I architected and developed a modular, performance-optimized, and energy-aware autonomous driving stack for the Shell Eco-marathon APC 2025, deployed on the CARLA simulator. The system was evaluated in complex urban driving scenarios with strict constraints on energy efficiency, real-time decision-making, and safety. Our team secured 2nd place globally out of 24 international teams.</p>
@@ -84,6 +87,7 @@ const projectsData = {
     date: "2025",
     status: "Competition Project",
     video: "",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>Collaborating remotely with Mohamed Ebrahim from Heriot-Watt University (UAE), I joined Team RADIANT to co-develop a full-stack autonomous solution for the Emirates Robotics Competition 2024. The mission: enable a mobile robot to navigate an unstructured, debris-filled terrain, classify and collect waste objects, and dispose of them into category-specific trash bins.</p>
@@ -107,6 +111,7 @@ const projectsData = {
     date: "2024",
     status: "4th Place Global",
     video: "/f1tenth.mp4",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
     article: `
       <h3>Project Overview</h3>
       <p>Competing against 58 teams globally, I developed a comprehensive autonomous racing software stack for the F1TENTH IROS 2024 challenge, achieving 4th place.</p>
@@ -130,6 +135,7 @@ const projectsData = {
     date: "2024",
     status: "Prototype Complete",
     video: "",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>I designed and developed a Distance Alarm Electronic Control Unit (ECU) prototype optimized for cost, power, and resource efficiency, targeting an electric vehicle application.</p>
@@ -226,16 +232,19 @@ const ProjectDetail = () => {
             <Card className="bg-gray-800 border-gray-700 mb-8">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">Project Media</h3>
-                
-                {/* Video Section */}
-                {project.video && (
+                {project.youtubeUrl && project.youtubeUrl.trim() !== "" && (
                   <div className="mb-6">
                     <h4 className="text-lg font-medium text-gray-300 mb-3">Project Video</h4>
                     <div className="aspect-video rounded-lg overflow-hidden flex items-center justify-center bg-black">
-                      <video controls className="w-full h-full">
-                        <source src={project.video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={project.youtubeUrl.replace("watch?v=", "embed/")}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
                     </div>
                   </div>
                 )}
