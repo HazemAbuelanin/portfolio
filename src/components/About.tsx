@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Target, Heart, Download } from "lucide-react";
+import { Target, Heart, Download, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
@@ -21,37 +21,45 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="md:col-span-2 p-8 border border-gray-700 bg-gradient-to-br from-gray-800 to-slate-800 hover:shadow-lg transition-all duration-300">
               <CardContent className="pt-0">
-                <div className="flex items-center mb-6">
-                  <Code className="h-6 w-6 text-blue-400 mr-3" />
-                  <h3 className="text-2xl font-bold text-white">My Journey</h3>
-                </div>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  As a Senior Computer Engineering student at Cairo University, my journey has been defined by 
-                  a passion for autonomous systems and robotics. I've participated in international competitions 
-                  like Shell Eco-marathon, where innovation meets real-world application.
-                </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  My expertise spans across full-stack development, machine learning, and autonomous vehicle systems. 
-                  I'm particularly fascinated by Physical AI and how intelligent systems can interact with the physical 
-                  world. My goal is to contribute to the advancement of robotics and autonomous technologies that will 
-                  shape our future.
-                </p>
-                
-                {/* Resume Download Button */}
-                <div className="flex gap-4 mt-6">
-                  <Button 
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                    onClick={() => {
-                      // REPLACE: Add your resume PDF URL
-                      const link = document.createElement('a');
-                      link.href = '/resume.pdf'; // Replace with your actual resume path
-                      link.download = 'Hazem_Abuelanin_Resume.pdf';
-                      link.click();
-                    }}
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download Resume
-                  </Button>
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    As a Senior Computer Engineering student at Cairo University, my expertise spans across full-stack development, machine learning, and autonomous vehicle systems. I'm particularly fascinated by Physical AI and how intelligent systems can interact with the physical world.
+                  </p>
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    My goal is to contribute to the advancement of robotics and autonomous technologies that will shape our future. Through competitive robotics and real-world deployments, I continue pushing the boundaries of what's possible in autonomous systems.
+                  </p>
+                  
+                  {/* Social Links with Resume Download */}
+                  <div className="flex gap-4 mt-6">
+                    <Button 
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                      onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = '/resume.pdf';
+                        link.download = 'Hazem_Abuelanin_Resume.pdf';
+                        link.click();
+                      }}
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      Resume
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="border-gray-600 text-gray-300 hover:bg-gray-700"
+                      onClick={() => window.open('https://linkedin.com/in/hazem-abuelanin', '_blank')}
+                    >
+                      <Linkedin className="mr-2 h-4 w-4" />
+                      LinkedIn
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="border-gray-600 text-gray-300 hover:bg-gray-700"
+                      onClick={() => window.open('https://github.com/HazemAbuelanin', '_blank')}
+                    >
+                      <Github className="mr-2 h-4 w-4" />
+                      GitHub
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>

@@ -1,14 +1,13 @@
 
 import { Badge } from "@/components/ui/badge";
 
-// EDIT HERE: Add, remove, or modify your skills
 const skills = [
-  "Python", "JavaScript", "TypeScript", "React", "Node.js", "C++", "Java",
-  "TensorFlow", "PyTorch", "OpenCV", "Machine Learning", "Computer Vision",
-  "ROS", "Autonomous Systems", "Robotics", "Physical AI", "Embedded Systems",
-  "MongoDB", "PostgreSQL", "AWS", "Docker", "Git", "Linux",
-  "HTML5", "CSS3", "Tailwind CSS", "Next.js", "Express.js", "FastAPI",
-  "React Native", "Flutter", "REST APIs", "GraphQL", "Redis"
+  "Python", "C/C++", "Java", "Dart/Flutter", "MATLAB", "Lua", "Linux", 
+  "ROS1", "ROS2", "SLAM", "Sensor Fusion", "Motion Planning", "Control Systems", 
+  "Computer Vision", "Deep Learning", "Machine Learning - NLP", 
+  "Embedded Systems Programming", "Firmware Development", "Microcontroller Programming", 
+  "PCB Design & Layout", "Circuit Analysis & Simulation", "Git", "Docker", 
+  "Altium Designer", "Proteus", "Gazebo", "CARLA", "CoppeliaSim", "Agile Development"
 ];
 
 const Skills = () => {

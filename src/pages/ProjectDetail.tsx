@@ -5,15 +5,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Github, ExternalLink, Calendar, Tag } from "lucide-react";
 
-// EDIT HERE: This should match the projects array from Projects.tsx
+// Updated project data matching the new content
 const projectsData = {
   "autonomous-vehicle-ever": {
-    title: "Autonomous Vehicle Control for Infinity-Track Navigation",
+    title: "Autonomous Vehicle Control for Infinity-Track Navigation — EVER 2024",
     description: "Led the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
-    image: "/placeholder.svg", // REPLACE: Add your project video/image
+    image: "/placeholder.svg",
     skills: ["Pure Pursuit Controller", "YOLOv8", "Intel RealSense", "3D LiDAR", "Python", "ROS"],
-    github: "#", // REPLACE: Add your GitHub URL
-    demo: "#", // REPLACE: Add your demo URL
+    github: "#",
+    demo: "#",
     date: "2024",
     status: "2nd Place Egypt",
     article: `
@@ -31,7 +31,7 @@ const projectsData = {
     `
   },
   "autonomous-driving-ros": {
-    title: "End-to-End Autonomous Driving Stack in ROS & CoppeliaSim",
+    title: "End-to-End Autonomous Driving Stack in ROS & CoppeliaSim — EVER 2024 Milestones",
     description: "Developed a modular autonomous driving software stack for EVER 2024 Milestone Challenge. Built complete perception, planning, and control pipeline with YOLOv7 object detection, EKF localization, and finite state machines.",
     image: "/placeholder.svg",
     skills: ["ROS Noetic", "CoppeliaSim", "YOLOv7", "Extended Kalman Filter", "Lane Detection", "State Machines"],
@@ -54,7 +54,7 @@ const projectsData = {
     `
   },
   "shell-eco-marathon": {
-    title: "Full-Stack Autonomous Driving System - Shell Eco-marathon",
+    title: "Full-Stack Autonomous Driving System for Energy-Efficient Urban Navigation — Shell Eco-marathon APC 2025",
     description: "Architected energy-efficient autonomous driving stack for Shell Eco-marathon APC 2025. Implemented YOLOv11nano perception, Behavior Trees planning, and energy-aware MPC control achieving 2nd place worldwide.",
     image: "/placeholder.svg",
     skills: ["ROS 2", "CARLA", "YOLOv11nano", "Behavior Trees", "MPC", "LiDAR Fusion"],
@@ -76,7 +76,75 @@ const projectsData = {
       <p>Developed and benchmarked multiple control strategies including energy-aware MPC with a cost model that penalized acceleration effort and path deviation under dynamic constraints, and adaptive PID and Pure Pursuit as lightweight alternatives under tight compute budgets.</p>
     `
   },
-  // Add more projects here following the same pattern
+  "emirates-robotics": {
+    title: "Autonomous Terrain Navigation & Object Disposal with Digital Twin — Emirates Robotics Competition 2025",
+    description: "Co-developed full-stack autonomous solution for Emirates Robotics Competition 2025. Built digital twin in Gazebo, implemented 3D object detection with Intel RealSense, and deployed on TurtleBot3 with custom robotic arm.",
+    image: "/placeholder.svg",
+    skills: ["ROS 2", "Gazebo", "Intel RealSense", "TurtleBot3", "Point Cloud", "Arduino"],
+    github: "#",
+    demo: "#",
+    date: "2025",
+    status: "Competition Project",
+    article: `
+      <h3>Project Overview</h3>
+      <p>Collaborating remotely with Mohamed Ebrahim from Heriot-Watt University (UAE), I joined Team RADIANT to co-develop a full-stack autonomous solution for the Emirates Robotics Competition 2024. The mission: enable a mobile robot to navigate an unstructured, debris-filled terrain, classify and collect waste objects, and dispose of them into category-specific trash bins.</p>
+      
+      <h3>Simulation & Digital Twin</h3>
+      <p>Led the development of the robot's digital twin in Gazebo to simulate real-world dynamics for system verification prior to deployment. Modeled the full robot system (TurtleBot3 + arm) for testing autonomy in a physics-based environment.</p>
+      
+      <h3>Perception Stack</h3>
+      <p>Integrated an Intel RealSense depth camera; converted depth images into 3D point clouds for object localization and rough shape estimation. Explored 3D object detection approaches to classify debris items using combined geometric features and CNN outputs.</p>
+      
+      <h3>Hardware Integration & Deployment</h3>
+      <p>Assisted in deploying the software stack to physical hardware using Raspberry Pi 4 as the ROS 2 compute platform. Worked alongside teammate Mahmoud El Rouby, who designed a custom servo-controlled robotic arm and gripper, which I helped control using Arduino PWM commands via ROS serial nodes.</p>
+    `
+  },
+  "f1tenth-racing": {
+    title: "Advanced Autonomous Racing Algorithms — F1TENTH IROS 2024",
+    description: "Developed comprehensive autonomous racing software stack for F1TENTH IROS 2024. Implemented SLAM pipeline, reactive navigation algorithms, and Pure Pursuit controller achieving 4th place out of 58 teams globally.",
+    image: "/placeholder.svg",
+    skills: ["ROS", "SLAM", "Kalman Filters", "AMCL", "Pure Pursuit", "Wall Following"],
+    github: "#",
+    demo: "#",
+    date: "2024",
+    status: "4th Place Global",
+    article: `
+      <h3>Project Overview</h3>
+      <p>Competing against 58 teams globally, I developed a comprehensive autonomous racing software stack for the F1TENTH IROS 2024 challenge, achieving 4th place.</p>
+      
+      <h3>Reactive Navigation Algorithms</h3>
+      <p>Designed and tuned wall-following and "follow-the-gap" behaviors for dynamic obstacle avoidance and rapid close-quarters maneuvering using robust PID controllers.</p>
+      
+      <h3>Map-Based Autonomy</h3>
+      <p>Implemented a full SLAM pipeline integrating odometry generation via sensor fusion, Kalman and Extended Kalman Filters for state estimation, and AMCL for precise localization within the race environment.</p>
+      
+      <h3>Trajectory Planning and Control</h3>
+      <p>Created racing lines optimized for speed and safety, combined with a Pure Pursuit controller for smooth and accurate path tracking. This project demonstrated proficiency in combining reactive and deliberative autonomy layers to maximize racing performance on a scaled autonomous vehicle platform.</p>
+    `
+  },
+  "distance-alarm-ecu": {
+    title: "Cost- and Power-Efficient Distance Alarm ECU Design Using a Single MCU",
+    description: "Designed cost and power-efficient Distance Alarm ECU for electric vehicles. Implemented innovative single ATmega328P design with diode-based multiplexing for three ultrasonic sensors, complete with PCB layout in Altium Designer.",
+    image: "/placeholder.svg",
+    skills: ["Embedded C", "ATmega328P", "Proteus", "Altium Designer", "Ultrasonic Sensors", "PCB Design"],
+    github: "#",
+    demo: "#",
+    date: "2024",
+    status: "Prototype Complete",
+    article: `
+      <h3>Project Overview</h3>
+      <p>I designed and developed a Distance Alarm Electronic Control Unit (ECU) prototype optimized for cost, power, and resource efficiency, targeting an electric vehicle application.</p>
+      
+      <h3>Single MCU Multi-Sensor Interface</h3>
+      <p>Employed one ATmega328P microcontroller to interface with three ultrasonic distance sensors by leveraging the Input Capture Unit (ICU) pin and diode-based multiplexing. This approach enables sequential triggering and echo reading of multiple sensors through one ICU pin instead of dedicating separate MCUs or input pins per sensor.</p>
+      
+      <h3>Embedded Software Development</h3>
+      <p>Wrote robust Embedded C code in Atmel Studio for accurate time-of-flight measurement, sensor switching, and distance computation while maintaining real-time responsiveness.</p>
+      
+      <h3>Hardware Design & PCB Layout</h3>
+      <p>Created the full schematic and conducted functional testing of sensor multiplexing and MCU interfacing in Proteus simulation environment before hardware implementation. Used Altium Designer to produce a compact and manufacturable PCB layout for the ECU, emphasizing signal integrity, power efficiency, and ease of integration.</p>
+    `
+  }
 };
 
 const ProjectDetail = () => {
@@ -87,7 +155,6 @@ const ProjectDetail = () => {
 
   const handleBackToProjects = () => {
     navigate('/', { replace: true });
-    // Small delay to ensure navigation completes before scrolling
     setTimeout(() => {
       const projectsSection = document.getElementById('projects');
       if (projectsSection) {
@@ -156,15 +223,35 @@ const ProjectDetail = () => {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            {/* Media Section */}
+            {/* Media Section - Space for videos and images */}
             <Card className="bg-gray-800 border-gray-700 mb-8">
               <CardContent className="p-6">
-                <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  {/* REPLACE: Add your project video or image here */}
-                  <div className="text-white text-center">
-                    <div className="text-4xl mb-2">🎥</div>
-                    <p>Project Video/Image Placeholder</p>
-                    <p className="text-sm opacity-75">Replace with your actual media</p>
+                <h3 className="text-xl font-semibold text-white mb-4">Project Media</h3>
+                
+                {/* Video Section */}
+                <div className="mb-6">
+                  <h4 className="text-lg font-medium text-gray-300 mb-3">Project Video</h4>
+                  <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <div className="text-white text-center">
+                      <div className="text-4xl mb-2">🎥</div>
+                      <p>Project Video Placeholder</p>
+                      <p className="text-sm opacity-75">Add your project video here</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Images Section */}
+                <div>
+                  <h4 className="text-lg font-medium text-gray-300 mb-3">Project Images</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[1, 2, 3, 4].map((index) => (
+                      <div key={index} className="aspect-video bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center">
+                        <div className="text-white text-center">
+                          <div className="text-2xl mb-1">📷</div>
+                          <p className="text-sm">Image {index}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </CardContent>
