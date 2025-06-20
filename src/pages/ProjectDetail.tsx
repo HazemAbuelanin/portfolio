@@ -63,7 +63,7 @@ const projectsData = {
     date: "2025",
     status: "2nd Place Worldwide",
     video: "",
-    youtubeUrl: "https://youtu.be/fu94LlajxwI",
+    youtubeUrl: "https://youtu.be/fu94LlajxwI?t=31",
     article: `
       <h3>Project Overview</h3>
       <p>As founder and lead engineer, I architected and developed a modular, performance-optimized, and energy-aware autonomous driving stack for the Shell Eco-marathon APC 2025, deployed on the CARLA simulator. The system was evaluated in complex urban driving scenarios with strict constraints on energy efficiency, real-time decision-making, and safety. Our team secured 2nd place globally out of 24 international teams.</p>
