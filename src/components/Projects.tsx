@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,94 +9,94 @@ import { useNavigate } from "react-router-dom";
 // Each project should have: title, description, image, skills, icon, color, status, github, demo, featured, date, slug
 const projects = [
   {
-    title: "Autonomous Racing Vehicle",
-    description: "Advanced autonomous navigation system for Shell Eco-marathon competition featuring computer vision, path planning, and sensor fusion algorithms for optimal racing performance.",
+    title: "Autonomous Vehicle Control for Infinity-Track Navigation",
+    description: "Led the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
     image: "/placeholder.svg", // REPLACE: Add your project image to public folder and update path
-    skills: ["Python", "OpenCV", "ROS", "Machine Learning", "Embedded Systems", "Computer Vision"],
+    skills: ["Pure Pursuit Controller", "YOLOv8", "Intel RealSense", "3D LiDAR", "Python", "ROS"],
     icon: Car,
     color: "from-blue-600 to-cyan-500",
     bgColor: "from-gray-800 to-slate-700",
-    status: "Competition Winner",
+    status: "2nd Place Egypt",
     github: "#", // REPLACE: Add your GitHub repository URL
     demo: "#", // REPLACE: Add your demo/live site URL
     featured: true,
-    date: "2023",
-    slug: "autonomous-racing-vehicle"
+    date: "2024",
+    slug: "autonomous-vehicle-ever"
   },
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack responsive e-commerce application with secure user authentication, integrated payment processing, comprehensive admin dashboard, and real-time inventory management.",
+    title: "End-to-End Autonomous Driving Stack in ROS & CoppeliaSim",
+    description: "Developed a modular autonomous driving software stack for EVER 2024 Milestone Challenge. Built complete perception, planning, and control pipeline with YOLOv7 object detection, EKF localization, and finite state machines.",
     image: "/placeholder.svg", // REPLACE: Add your project image
-    skills: ["React", "Node.js", "MongoDB", "Stripe API", "TypeScript", "Tailwind CSS"],
-    icon: Globe,
+    skills: ["ROS Noetic", "CoppeliaSim", "YOLOv7", "Extended Kalman Filter", "Lane Detection", "State Machines"],
+    icon: Brain,
     color: "from-emerald-600 to-teal-500",
     bgColor: "from-gray-800 to-slate-700",
-    status: "Production Ready",
+    status: "3rd Place Egypt",
     github: "#", // REPLACE: Add your GitHub URL
     demo: "#", // REPLACE: Add your demo URL
     featured: true,
-    date: "2023",
-    slug: "ecommerce-platform"
+    date: "2024",
+    slug: "autonomous-driving-ros"
   },
   {
-    title: "AI-Powered Fitness App",
-    description: "Smart mobile fitness application with AI workout recommendations, social features, progress analytics, and personalized training plans based on user performance data.",
+    title: "Full-Stack Autonomous Driving System - Shell Eco-marathon",
+    description: "Architected energy-efficient autonomous driving stack for Shell Eco-marathon APC 2025. Implemented YOLOv11nano perception, Behavior Trees planning, and energy-aware MPC control achieving 2nd place worldwide.",
     image: "/placeholder.svg", // REPLACE: Add your project image
-    skills: ["React Native", "Firebase", "TensorFlow", "Redux", "REST APIs", "Machine Learning"],
-    icon: Smartphone,
+    skills: ["ROS 2", "CARLA", "YOLOv11nano", "Behavior Trees", "MPC", "LiDAR Fusion"],
+    icon: Globe,
     color: "from-purple-600 to-pink-500",
     bgColor: "from-gray-800 to-slate-700",
-    status: "App Store",
+    status: "2nd Place Worldwide",
     github: "#", // REPLACE: Add your GitHub URL
     demo: "#", // REPLACE: Add your app store URL
     featured: true,
-    date: "2023",
-    slug: "ai-fitness-app"
+    date: "2025",
+    slug: "shell-eco-marathon"
   },
   {
-    title: "Computer Vision Platform",
-    description: "Real-time object detection and classification system using deep learning. Supports multiple model architectures and provides REST API for integration with other applications.",
+    title: "Autonomous Terrain Navigation & Object Disposal",
+    description: "Co-developed full-stack autonomous solution for Emirates Robotics Competition 2025. Built digital twin in Gazebo, implemented 3D object detection with Intel RealSense, and deployed on TurtleBot3 with custom robotic arm.",
     image: "/placeholder.svg", // REPLACE: Add your project image
-    skills: ["Python", "TensorFlow", "OpenCV", "FastAPI", "Docker", "Deep Learning"],
-    icon: Brain,
+    skills: ["ROS 2", "Gazebo", "Intel RealSense", "TurtleBot3", "Point Cloud", "Arduino"],
+    icon: Smartphone,
     color: "from-orange-600 to-red-500",
     bgColor: "from-gray-800 to-slate-700",
-    status: "Research Project",
+    status: "Competition Project",
     github: "#", // REPLACE: Add your GitHub URL
     demo: "#", // REPLACE: Add your demo URL
     featured: false,
-    date: "2023",
-    slug: "computer-vision-platform"
+    date: "2025",
+    slug: "emirates-robotics"
   },
   {
-    title: "Business Analytics Dashboard",
-    description: "Interactive real-time dashboard for business intelligence with advanced data visualization, custom reporting capabilities, and automated insights generation.",
+    title: "Advanced Autonomous Racing Algorithms - F1TENTH",
+    description: "Developed comprehensive autonomous racing software stack for F1TENTH IROS 2024. Implemented SLAM pipeline, reactive navigation algorithms, and Pure Pursuit controller achieving 4th place out of 58 teams globally.",
     image: "/placeholder.svg", // REPLACE: Add your project image
-    skills: ["React", "D3.js", "PostgreSQL", "Python", "Express.js", "Chart.js"],
+    skills: ["ROS", "SLAM", "Kalman Filters", "AMCL", "Pure Pursuit", "Wall Following"],
     icon: Database,
     color: "from-indigo-600 to-purple-500",
     bgColor: "from-gray-800 to-slate-700",
-    status: "Client Project",
+    status: "4th Place Global",
     github: "#", // REPLACE: Add your GitHub URL
     demo: "#", // REPLACE: Add your demo URL
     featured: false,
-    date: "2022",
-    slug: "analytics-dashboard"
+    date: "2024",
+    slug: "f1tenth-racing"
   },
   {
-    title: "Open Source Form Library",
-    description: "Lightweight, accessible form validation library for React applications. Features TypeScript support, custom validators, and comprehensive documentation with 1000+ GitHub stars.",
+    title: "Distance Alarm ECU Design Using Single MCU",
+    description: "Designed cost and power-efficient Distance Alarm ECU for electric vehicles. Implemented innovative single ATmega328P design with diode-based multiplexing for three ultrasonic sensors, complete with PCB layout in Altium Designer.",
     image: "/placeholder.svg", // REPLACE: Add your project image
-    skills: ["JavaScript", "TypeScript", "React", "Jest", "npm", "Documentation"],
+    skills: ["Embedded C", "ATmega328P", "Proteus", "Altium Designer", "Ultrasonic Sensors", "PCB Design"],
     icon: Code,
     color: "from-green-600 to-emerald-500",
     bgColor: "from-gray-800 to-slate-700",
-    status: "Open Source",
+    status: "Prototype Complete",
     github: "#", // REPLACE: Add your GitHub URL
     demo: "#", // REPLACE: Add your npm/demo URL
     featured: false,
-    date: "2022",
-    slug: "form-library"
+    date: "2024",
+    slug: "distance-alarm-ecu"
   }
 ];
 
@@ -116,8 +117,8 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A showcase of my technical projects across web development, mobile apps, 
-            AI/ML, and open-source contributions
+            Award-winning autonomous systems and robotics projects across real-world competitions, 
+            simulation environments, and embedded hardware solutions
           </p>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-8"></div>
         </div>

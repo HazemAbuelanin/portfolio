@@ -7,64 +7,73 @@ import { ArrowLeft, Github, ExternalLink, Calendar, Tag } from "lucide-react";
 
 // EDIT HERE: This should match the projects array from Projects.tsx
 const projectsData = {
-  "autonomous-racing-vehicle": {
-    title: "Autonomous Racing Vehicle",
-    description: "Advanced autonomous navigation system for Shell Eco-marathon competition featuring computer vision, path planning, and sensor fusion algorithms for optimal racing performance.",
+  "autonomous-vehicle-ever": {
+    title: "Autonomous Vehicle Control for Infinity-Track Navigation",
+    description: "Led the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
     image: "/placeholder.svg", // REPLACE: Add your project video/image
-    skills: ["Python", "OpenCV", "ROS", "Machine Learning", "Embedded Systems", "Computer Vision"],
+    skills: ["Pure Pursuit Controller", "YOLOv8", "Intel RealSense", "3D LiDAR", "Python", "ROS"],
     github: "#", // REPLACE: Add your GitHub URL
     demo: "#", // REPLACE: Add your demo URL
-    date: "2023",
-    status: "Competition Winner",
+    date: "2024",
+    status: "2nd Place Egypt",
     article: `
       <h3>Project Overview</h3>
-      <p>The Autonomous Racing Vehicle project was developed for the Shell Eco-marathon competition, where teams compete to build the most energy-efficient vehicle. Our approach focused on creating an autonomous navigation system that could optimize racing performance while maintaining safety and efficiency.</p>
+      <p>In the EVER 2024 Electric Vehicle Rally, I led the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
       
       <h3>Technical Implementation</h3>
-      <p>The system integrates multiple technologies including computer vision for obstacle detection, path planning algorithms for optimal route calculation, and sensor fusion to combine data from various sensors including LiDAR, cameras, and IMU sensors.</p>
+      <p>My role began with problem-solving: analyzing task constraints and evaluating multiple control strategies (PID, MPC, Pure Pursuit). After several experiments, I selected and tuned the Pure Pursuit algorithm for reliable real-time tracking on the real vehicle.</p>
       
-      <h3>Key Features</h3>
-      <ul>
-        <li>Real-time object detection and classification</li>
-        <li>Advanced path planning with dynamic obstacle avoidance</li>
-        <li>Sensor fusion for improved accuracy and reliability</li>
-        <li>Energy optimization algorithms</li>
-        <li>Safety monitoring and emergency stop systems</li>
-      </ul>
+      <h3>Vision System Development</h3>
+      <p>I developed a YOLOv8-based vision model to classify and detect cone positions by color, integrating it with an Intel RealSense depth camera to localize cones for dynamic path planning. While this advanced vision-based path planning was functional, limited time led us to fallback on a predefined path guided by the tuned controller.</p>
       
       <h3>Results and Impact</h3>
-      <p>Our team successfully won the competition, achieving the highest energy efficiency rating while maintaining competitive lap times. The project demonstrated the potential of autonomous systems in racing applications and contributed to research in energy-efficient transportation.</p>
+      <p>The project was a finalist effort, earning 2nd place nationwide. I'm grateful to mentors Eng. Ebrahim Abdelghafar and Eng. Ziad Osama for their technical guidance throughout this challenging real-world autonomous vehicle project.</p>
     `
   },
-  "ecommerce-platform": {
-    title: "E-Commerce Platform",
-    description: "Full-stack responsive e-commerce application with secure user authentication, integrated payment processing, comprehensive admin dashboard, and real-time inventory management.",
-    image: "/placeholder.svg", // REPLACE: Add your project video/image
-    skills: ["React", "Node.js", "MongoDB", "Stripe API", "TypeScript", "Tailwind CSS"],
+  "autonomous-driving-ros": {
+    title: "End-to-End Autonomous Driving Stack in ROS & CoppeliaSim",
+    description: "Developed a modular autonomous driving software stack for EVER 2024 Milestone Challenge. Built complete perception, planning, and control pipeline with YOLOv7 object detection, EKF localization, and finite state machines.",
+    image: "/placeholder.svg",
+    skills: ["ROS Noetic", "CoppeliaSim", "YOLOv7", "Extended Kalman Filter", "Lane Detection", "State Machines"],
     github: "#",
     demo: "#",
-    date: "2023",
-    status: "Production Ready",
+    date: "2024",
+    status: "3rd Place Egypt",
     article: `
       <h3>Project Overview</h3>
-      <p>This full-stack e-commerce platform provides a complete solution for online retail businesses, featuring modern design, secure payment processing, and comprehensive administrative tools.</p>
+      <p>As part of the EVER 2024 Milestone Challenge, I led the development of a modular and robust autonomous driving software stack within the ROS Noetic + CoppeliaSim simulation environment. The challenge involved completing three progressive milestones that cumulatively assessed system-level autonomy.</p>
       
-      <h3>Architecture and Design</h3>
-      <p>Built using a modern tech stack with React frontend, Node.js backend, and MongoDB database. The application follows best practices for security, performance, and scalability.</p>
+      <h3>Milestone 1 — Open Loop Control</h3>
+      <p>Implemented an open-loop velocity and steering command publisher for fixed paths across multiple track configurations. Developed low-latency ROS nodes to interface with CoppeliaSim actuators via remote API.</p>
       
-      <h3>Key Features</h3>
-      <ul>
-        <li>Responsive design optimized for all devices</li>
-        <li>Secure user authentication and authorization</li>
-        <li>Integrated Stripe payment processing</li>
-        <li>Real-time inventory management</li>
-        <li>Comprehensive admin dashboard</li>
-        <li>Order tracking and management</li>
-        <li>Product search and filtering</li>
-      </ul>
+      <h3>Milestone 2 — Closed Loop Control with Perception</h3>
+      <p>Designed and tuned a closed-loop feedback controller using PID and steering control logic. Developed a YOLOv7-based object detection pipeline (trained on synthetic CoppeliaSim data) to identify pedestrians, vehicles, and cones in real time. Fused odometry data using an Extended Kalman Filter (EKF) to improve localization accuracy.</p>
       
-      <h3>Technical Challenges</h3>
-      <p>The main challenges included implementing secure payment processing, managing complex state across the application, and ensuring optimal performance with large product catalogs. These were addressed through careful architecture planning and implementation of industry best practices.</p>
+      <h3>Milestone 3 — Full Autonomy in Multi-Scenario Tracks</h3>
+      <p>Architected the high-level autonomy stack to handle lane keeping, lane change maneuvers, obstacle avoidance, circular path navigation, and full traversal of a custom-designed urban city simulation with dynamic agents. Built a monocular depth estimation module using geometric scaling from bounding box and camera intrinsics.</p>
+    `
+  },
+  "shell-eco-marathon": {
+    title: "Full-Stack Autonomous Driving System - Shell Eco-marathon",
+    description: "Architected energy-efficient autonomous driving stack for Shell Eco-marathon APC 2025. Implemented YOLOv11nano perception, Behavior Trees planning, and energy-aware MPC control achieving 2nd place worldwide.",
+    image: "/placeholder.svg",
+    skills: ["ROS 2", "CARLA", "YOLOv11nano", "Behavior Trees", "MPC", "LiDAR Fusion"],
+    github: "#",
+    demo: "#",
+    date: "2025",
+    status: "2nd Place Worldwide",
+    article: `
+      <h3>Project Overview</h3>
+      <p>As founder and lead engineer, I architected and developed a modular, performance-optimized, and energy-aware autonomous driving stack for the Shell Eco-marathon APC 2025, deployed on the CARLA simulator. The system was evaluated in complex urban driving scenarios with strict constraints on energy efficiency, real-time decision-making, and safety. Our team secured 2nd place globally out of 24 international teams.</p>
+      
+      <h3>Perception Stack</h3>
+      <p>Developed a hybrid multi-sensor perception system for robust scene understanding using YOLOv11nano optimized for edge inference, custom 3D object detection pipeline leveraging LiDAR-based clustering, and camera–LiDAR fusion using spatial–temporal association and projection matrices.</p>
+      
+      <h3>Planning Stack</h3>
+      <p>Designed a two-tiered planning architecture with high-level behavior planner using Behavior Trees (BT) to handle decision branches like overtaking logic, intersection priority, and yielding behavior. Implemented and customized Frenet Optimal Trajectory Planning (FOTP) with modified cost functions to minimize energy.</p>
+      
+      <h3>Control Stack</h3>
+      <p>Developed and benchmarked multiple control strategies including energy-aware MPC with a cost model that penalized acceleration effort and path deviation under dynamic constraints, and adaptive PID and Pure Pursuit as lightweight alternatives under tight compute budgets.</p>
     `
   },
   // Add more projects here following the same pattern
