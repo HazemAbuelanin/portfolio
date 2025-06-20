@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
@@ -81,77 +80,17 @@ const blogPosts = {
 };
 
 const Blog = () => {
-  const { slug } = useParams();
-  const navigate = useNavigate();
-  
-  const post = slug ? blogPosts[slug as keyof typeof blogPosts] : null;
-
-  if (!post) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black">
-        <Navigation />
-        <div className="container mx-auto px-6 pt-32">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-white mb-4">Blog Post Not Found</h1>
-            <Button onClick={() => navigate('/')} className="bg-blue-600 hover:bg-blue-700">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
+  // Always show Not Available Now
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black">
       <Navigation />
-      <div className="container mx-auto px-6 pt-32 pb-20">
-        <div className="max-w-4xl mx-auto">
-          <Button 
-            onClick={() => navigate('/')} 
-            variant="ghost" 
-            className="text-gray-300 hover:text-white mb-8"
-          >
+      <div className="container mx-auto px-6 pt-32">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-white mb-4">Not Available Now</h1>
+          <Button onClick={() => window.history.back()} className="bg-blue-600 hover:bg-blue-700">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Home
+            Back
           </Button>
-          
-          <Card className="bg-slate-800/50 border-slate-700">
-            <CardContent className="p-8">
-              <div className="mb-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <Badge variant="outline" className="bg-blue-500/20 text-blue-300 border-blue-400">
-                    {post.category}
-                  </Badge>
-                  <div className="flex items-center text-sm text-gray-400">
-                    <Clock className="h-4 w-4 mr-1" />
-                    {post.readTime}
-                  </div>
-                </div>
-                
-                <h1 className="text-4xl font-bold text-white mb-4">{post.title}</h1>
-                
-                <div className="flex items-center text-sm text-gray-400 mb-8">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {new Date(post.date).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}
-                </div>
-              </div>
-              
-              <div className="aspect-video bg-gradient-to-br from-blue-600 to-purple-700 rounded-lg mb-8 flex items-center justify-center">
-                <p className="text-white text-lg">Blog Post Image Placeholder</p>
-              </div>
-              
-              <div 
-                className="prose prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>
