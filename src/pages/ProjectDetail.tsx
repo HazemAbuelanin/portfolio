@@ -63,7 +63,7 @@ const projectsData = {
     date: "2025",
     status: "2nd Place Worldwide",
     video: "",
-    youtubeUrl: "https://youtu.be/fu94LlajxwI?t=31",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>As founder and lead engineer, I architected and developed a modular, performance-optimized, and energy-aware autonomous driving stack for the Shell Eco-marathon APC 2025, deployed on the CARLA simulator. The system was evaluated in complex urban driving scenarios with strict constraints on energy efficiency, real-time decision-making, and safety. Our team secured 2nd place globally out of 24 international teams.</p>
@@ -111,7 +111,7 @@ const projectsData = {
     date: "2024",
     status: "4th Place Global",
     video: "/f1tenth.mp4",
-    youtubeUrl: "https://youtu.be/Vf_XOZvBjdA",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
     article: `
       <h3>Project Overview</h3>
       <p>Competing against 58 teams globally, I developed a comprehensive autonomous racing software stack for the F1TENTH IROS 2024 challenge, achieving 4th place.</p>
@@ -151,6 +151,13 @@ const projectsData = {
     `
   }
 };
+
+// Helper function to extract YouTube video ID from a URL
+function getYouTubeId(url: string): string | null {
+  const regExp = /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[1].length === 11) ? match[1] : null;
+}
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -232,19 +239,25 @@ const ProjectDetail = () => {
             <Card className="bg-gray-800 border-gray-700 mb-8">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">Project Media</h3>
-                {project.youtubeUrl && project.youtubeUrl.trim() !== "" && (
+                {project.youtubeUrl && project.youtubeUrl.trim() !== "" && getYouTubeId(project.youtubeUrl) && (
                   <div className="mb-6">
                     <h4 className="text-lg font-medium text-gray-300 mb-3">Project Video</h4>
-                    <div className="aspect-video rounded-lg overflow-hidden flex items-center justify-center bg-black">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src={project.youtubeUrl.replace("watch?v=", "embed/")}
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
+                    <div
+                      className="relative aspect-video rounded-lg overflow-hidden cursor-pointer group"
+                      onClick={() => window.open(project.youtubeUrl, "_blank")}
+                      style={{ maxWidth: 640, margin: "0 auto" }}
+                    >
+                      <img
+                        src={`https://img.youtube.com/vi/${getYouTubeId(project.youtubeUrl)}/hqdefault.jpg`}
+                        alt="YouTube Video Thumbnail"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition">
+                        <svg className="w-16 h-16 text-white opacity-90" fill="currentColor" viewBox="0 0 84 84">
+                          <circle cx="42" cy="42" r="42" fill="black" fillOpacity="0.6"/>
+                          <polygon points="34,28 60,42 34,56" fill="white"/>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 )}
