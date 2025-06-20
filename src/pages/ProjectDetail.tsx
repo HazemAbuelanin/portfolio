@@ -1,4 +1,3 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,7 +9,6 @@ const projectsData = {
   "autonomous-vehicle-ever": {
     title: "Autonomous Vehicle Control for Infinity-Track Navigation — EVER 2024",
     description: "Led the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
-    image: "/placeholder.svg",
     skills: ["Pure Pursuit Controller", "YOLOv8", "Intel RealSense", "3D LiDAR", "Python", "ROS"],
     github: "#",
     demo: "#",
@@ -33,7 +31,6 @@ const projectsData = {
   "autonomous-driving-ros": {
     title: "End-to-End Autonomous Driving Stack in ROS & CoppeliaSim — EVER 2024 Milestones",
     description: "Developed a modular autonomous driving software stack for EVER 2024 Milestone Challenge. Built complete perception, planning, and control pipeline with YOLOv7 object detection, EKF localization, and finite state machines.",
-    image: "/placeholder.svg",
     skills: ["ROS Noetic", "CoppeliaSim", "YOLOv7", "Extended Kalman Filter", "Lane Detection", "State Machines"],
     github: "#",
     demo: "#",
@@ -56,7 +53,6 @@ const projectsData = {
   "shell-eco-marathon": {
     title: "Full-Stack Autonomous Driving System for Energy-Efficient Urban Navigation — Shell Eco-marathon APC 2025",
     description: "Architected energy-efficient autonomous driving stack for Shell Eco-marathon APC 2025. Implemented YOLOv11nano perception, Behavior Trees planning, and energy-aware MPC control achieving 2nd place worldwide.",
-    image: "/placeholder.svg",
     skills: ["ROS 2", "CARLA", "YOLOv11nano", "Behavior Trees", "MPC", "LiDAR Fusion"],
     github: "#",
     demo: "#",
@@ -79,7 +75,6 @@ const projectsData = {
   "emirates-robotics": {
     title: "Autonomous Terrain Navigation & Object Disposal with Digital Twin — Emirates Robotics Competition 2025",
     description: "Co-developed full-stack autonomous solution for Emirates Robotics Competition 2025. Built digital twin in Gazebo, implemented 3D object detection with Intel RealSense, and deployed on TurtleBot3 with custom robotic arm.",
-    image: "/placeholder.svg",
     skills: ["ROS 2", "Gazebo", "Intel RealSense", "TurtleBot3", "Point Cloud", "Arduino"],
     github: "#",
     demo: "#",
@@ -102,7 +97,6 @@ const projectsData = {
   "f1tenth-racing": {
     title: "Advanced Autonomous Racing Algorithms — F1TENTH IROS 2024",
     description: "Developed comprehensive autonomous racing software stack for F1TENTH IROS 2024. Implemented SLAM pipeline, reactive navigation algorithms, and Pure Pursuit controller achieving 4th place out of 58 teams globally.",
-    image: "/placeholder.svg",
     skills: ["ROS", "SLAM", "Kalman Filters", "AMCL", "Pure Pursuit", "Wall Following"],
     github: "#",
     demo: "#",
@@ -125,7 +119,6 @@ const projectsData = {
   "distance-alarm-ecu": {
     title: "Cost- and Power-Efficient Distance Alarm ECU Design Using a Single MCU",
     description: "Designed cost and power-efficient Distance Alarm ECU for electric vehicles. Implemented innovative single ATmega328P design with diode-based multiplexing for three ultrasonic sensors, complete with PCB layout in Altium Designer.",
-    image: "/placeholder.svg",
     skills: ["Embedded C", "ATmega328P", "Proteus", "Altium Designer", "Ultrasonic Sensors", "PCB Design"],
     github: "#",
     demo: "#",
@@ -237,21 +230,6 @@ const ProjectDetail = () => {
                       <p>Project Video Placeholder</p>
                       <p className="text-sm opacity-75">Add your project video here</p>
                     </div>
-                  </div>
-                </div>
-
-                {/* Images Section */}
-                <div>
-                  <h4 className="text-lg font-medium text-gray-300 mb-3">Project Images</h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {[1, 2, 3, 4].map((index) => (
-                      <div key={index} className="aspect-video bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center">
-                        <div className="text-white text-center">
-                          <div className="text-2xl mb-1">📷</div>
-                          <p className="text-sm">Image {index}</p>
-                        </div>
-                      </div>
-                    ))}
                   </div>
                 </div>
               </CardContent>
