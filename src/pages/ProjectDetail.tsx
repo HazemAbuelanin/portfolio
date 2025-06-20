@@ -14,6 +14,7 @@ const projectsData = {
     demo: "#",
     date: "2024",
     status: "2nd Place Egypt",
+    video: "",
     article: `
       <h3>Project Overview</h3>
       <p>In the EVER 2024 Electric Vehicle Rally, I led the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
@@ -36,6 +37,7 @@ const projectsData = {
     demo: "#",
     date: "2024",
     status: "3rd Place Egypt",
+    video: "",
     article: `
       <h3>Project Overview</h3>
       <p>As part of the EVER 2024 Milestone Challenge, I led the development of a modular and robust autonomous driving software stack within the ROS Noetic + CoppeliaSim simulation environment. The challenge involved completing three progressive milestones that cumulatively assessed system-level autonomy.</p>
@@ -58,6 +60,7 @@ const projectsData = {
     demo: "#",
     date: "2025",
     status: "2nd Place Worldwide",
+    video: "",
     article: `
       <h3>Project Overview</h3>
       <p>As founder and lead engineer, I architected and developed a modular, performance-optimized, and energy-aware autonomous driving stack for the Shell Eco-marathon APC 2025, deployed on the CARLA simulator. The system was evaluated in complex urban driving scenarios with strict constraints on energy efficiency, real-time decision-making, and safety. Our team secured 2nd place globally out of 24 international teams.</p>
@@ -80,6 +83,7 @@ const projectsData = {
     demo: "#",
     date: "2025",
     status: "Competition Project",
+    video: "",
     article: `
       <h3>Project Overview</h3>
       <p>Collaborating remotely with Mohamed Ebrahim from Heriot-Watt University (UAE), I joined Team RADIANT to co-develop a full-stack autonomous solution for the Emirates Robotics Competition 2024. The mission: enable a mobile robot to navigate an unstructured, debris-filled terrain, classify and collect waste objects, and dispose of them into category-specific trash bins.</p>
@@ -125,6 +129,7 @@ const projectsData = {
     demo: "#",
     date: "2024",
     status: "Prototype Complete",
+    video: "",
     article: `
       <h3>Project Overview</h3>
       <p>I designed and developed a Distance Alarm Electronic Control Unit (ECU) prototype optimized for cost, power, and resource efficiency, targeting an electric vehicle application.</p>
