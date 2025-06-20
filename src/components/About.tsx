@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Heart, Download, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,7 +22,7 @@ const About = () => {
               <CardContent className="pt-0">
                 <div className="space-y-6">
                   <p className="text-lg text-gray-300 leading-relaxed">
-                    As a Senior Computer Engineering student at Cairo University, my expertise spans across full-stack development, machine learning, and autonomous vehicle systems. I'm particularly fascinated by Physical AI and how intelligent systems can interact with the physical world.
+                    As a Senior Computer Engineering student at Benha University - Shoubra Faculty of Engineering, my expertise spans across Robotics, Autonomous Systems, Physical AI and Embedded Systems and I'm particularly fascinated by Physical AI and how intelligent systems can interact with the physical world.
                   </p>
                   <p className="text-lg text-gray-300 leading-relaxed">
                     My goal is to contribute to the advancement of robotics and autonomous technologies that will shape our future. Through competitive robotics and real-world deployments, I continue pushing the boundaries of what's possible in autonomous systems.
@@ -42,22 +41,6 @@ const About = () => {
                     >
                       <Download className="mr-2 h-4 w-4" />
                       Resume
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      className="border-gray-600 text-gray-300 hover:bg-gray-700"
-                      onClick={() => window.open('https://linkedin.com/in/hazem-abuelanin', '_blank')}
-                    >
-                      <Linkedin className="mr-2 h-4 w-4" />
-                      LinkedIn
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      className="border-gray-600 text-gray-300 hover:bg-gray-700"
-                      onClick={() => window.open('https://github.com/HazemAbuelanin', '_blank')}
-                    >
-                      <Github className="mr-2 h-4 w-4" />
-                      GitHub
                     </Button>
                   </div>
                 </div>
