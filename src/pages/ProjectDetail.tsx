@@ -102,6 +102,7 @@ const projectsData = {
     demo: "#",
     date: "2024",
     status: "4th Place Global",
+    video: "/f1tenth.mp4",
     article: `
       <h3>Project Overview</h3>
       <p>Competing against 58 teams globally, I developed a comprehensive autonomous racing software stack for the F1TENTH IROS 2024 challenge, achieving 4th place.</p>
@@ -222,16 +223,17 @@ const ProjectDetail = () => {
                 <h3 className="text-xl font-semibold text-white mb-4">Project Media</h3>
                 
                 {/* Video Section */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-medium text-gray-300 mb-3">Project Video</h4>
-                  <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <div className="text-white text-center">
-                      <div className="text-4xl mb-2">🎥</div>
-                      <p>Project Video Placeholder</p>
-                      <p className="text-sm opacity-75">Add your project video here</p>
+                {project.video && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-medium text-gray-300 mb-3">Project Video</h4>
+                    <div className="aspect-video rounded-lg overflow-hidden flex items-center justify-center bg-black">
+                      <video controls className="w-full h-full">
+                        <source src={project.video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                   </div>
-                </div>
+                )}
               </CardContent>
             </Card>
 
