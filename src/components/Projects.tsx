@@ -9,7 +9,6 @@ const projects = [
   {
     title: "Autonomous Vehicle Control for Infinity-Track Navigation",
     description: "Led the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
-    image: "/placeholder.svg",
     skills: ["Pure Pursuit Controller", "YOLOv8", "Intel RealSense", "3D LiDAR", "Python", "ROS"],
     icon: Car,
     color: "from-blue-600 to-cyan-500",
@@ -24,7 +23,6 @@ const projects = [
   {
     title: "End-to-End Autonomous Driving Stack in ROS & CoppeliaSim",
     description: "Developed a modular autonomous driving software stack for EVER 2024 Milestone Challenge. Built complete perception, planning, and control pipeline with YOLOv7 object detection, EKF localization, and finite state machines.",
-    image: "/placeholder.svg",
     skills: ["ROS Noetic", "CoppeliaSim", "YOLOv7", "Extended Kalman Filter", "Lane Detection", "State Machines"],
     icon: Brain,
     color: "from-emerald-600 to-teal-500",
@@ -39,7 +37,6 @@ const projects = [
   {
     title: "Full-Stack Autonomous Driving System - Shell Eco-marathon",
     description: "Architected energy-efficient autonomous driving stack for Shell Eco-marathon APC 2025. Implemented YOLOv11nano perception, Behavior Trees planning, and energy-aware MPC control achieving 2nd place worldwide.",
-    image: "/placeholder.svg",
     skills: ["ROS 2", "CARLA", "YOLOv11nano", "Behavior Trees", "MPC", "LiDAR Fusion"],
     icon: Globe,
     color: "from-purple-600 to-pink-500",
@@ -54,7 +51,6 @@ const projects = [
   {
     title: "Autonomous Terrain Navigation & Object Disposal",
     description: "Co-developed full-stack autonomous solution for Emirates Robotics Competition 2025. Built digital twin in Gazebo, implemented 3D object detection with Intel RealSense, and deployed on TurtleBot3 with custom robotic arm.",
-    image: "/placeholder.svg",
     skills: ["ROS 2", "Gazebo", "Intel RealSense", "TurtleBot3", "Point Cloud", "Arduino"],
     icon: Smartphone,
     color: "from-orange-600 to-red-500",
@@ -69,7 +65,6 @@ const projects = [
   {
     title: "Advanced Autonomous Racing Algorithms - F1TENTH",
     description: "Developed comprehensive autonomous racing software stack for F1TENTH IROS 2024. Implemented SLAM pipeline, reactive navigation algorithms, and Pure Pursuit controller achieving 4th place out of 58 teams globally.",
-    image: "/placeholder.svg",
     skills: ["ROS", "SLAM", "Kalman Filters", "AMCL", "Pure Pursuit", "Wall Following"],
     icon: Database,
     color: "from-indigo-600 to-purple-500",
@@ -84,7 +79,6 @@ const projects = [
   {
     title: "Distance Alarm ECU Design Using Single MCU",
     description: "Designed cost and power-efficient Distance Alarm ECU for electric vehicles. Implemented innovative single ATmega328P design with diode-based multiplexing for three ultrasonic sensors, complete with PCB layout in Altium Designer.",
-    image: "/placeholder.svg",
     skills: ["Embedded C", "ATmega328P", "Proteus", "Altium Designer", "Ultrasonic Sensors", "PCB Design"],
     icon: Code,
     color: "from-green-600 to-emerald-500",
