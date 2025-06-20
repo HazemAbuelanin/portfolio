@@ -18,10 +18,6 @@ const Skills = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Technical Skills
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A comprehensive toolkit spanning frontend, backend, mobile development, 
-            robotics, AI, and autonomous systems
-          </p>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-8"></div>
         </div>
 
