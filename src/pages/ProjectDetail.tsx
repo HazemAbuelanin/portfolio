@@ -1,3 +1,4 @@
+
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -75,12 +76,23 @@ const ProjectDetail = () => {
   
   const project = slug ? projectsData[slug as keyof typeof projectsData] : null;
 
+  const handleBackToProjects = () => {
+    navigate('/', { replace: true });
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   if (!project) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-white mb-4">Project Not Found</h1>
-          <Button onClick={() => navigate('/')} className="bg-blue-600 hover:bg-blue-700">
+          <Button onClick={handleBackToProjects} className="bg-blue-600 hover:bg-blue-700">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Button>
@@ -95,7 +107,7 @@ const ProjectDetail = () => {
       <div className="bg-gradient-to-r from-gray-800 to-slate-700 py-8">
         <div className="container mx-auto px-6">
           <Button 
-            onClick={() => navigate('/')}
+            onClick={handleBackToProjects}
             variant="ghost" 
             className="text-white hover:bg-white/10 mb-6"
           >
