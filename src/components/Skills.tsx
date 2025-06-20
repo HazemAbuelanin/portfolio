@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 const skills = [
   "Python", "C/C++", "Java", "Dart/Flutter", "MATLAB", "Lua", "Linux", 
   "ROS1", "ROS2", "SLAM", "Sensor Fusion", "Motion Planning", "Control Systems", 
-  "Computer Vision", "Deep Learning", "Machine Learning - NLP", 
+  "Computer Vision", "Deep Learning", "Machine Learning", "NLP", 
   "Embedded Systems Programming", "Firmware Development", "Microcontroller Programming", 
-  "PCB Design & Layout", "Circuit Analysis & Simulation", "Git", "Docker", 
+  "PCB Design & Layout", "Git", "Docker", "Physical AI", "Software Engineering", "System Design",
   "Altium Designer", "Proteus", "Gazebo", "CARLA", "CoppeliaSim", "Agile Development"
 ];
 
