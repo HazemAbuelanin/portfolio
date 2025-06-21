@@ -8,17 +8,17 @@ import { ArrowLeft, Github, ExternalLink, Calendar, Tag } from "lucide-react";
 const projectsData = {
   "autonomous-vehicle-ever": {
     title: "Autonomous Vehicle Control for Infinity-Track Navigation — EVER 2024",
-    description: "Contributed to the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
+    description: "Led the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
     skills: ["Pure Pursuit Controller", "YOLOv8", "Intel RealSense", "3D LiDAR", "Python", "ROS"],
     github: "#",
     demo: "#",
     date: "2024",
     status: "2nd Place Egypt",
     video: "",
-    youtubeUrl: "https://youtu.be/17trZ1idB8U",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
-      <p>In the EVER 2024 Electric Vehicle Rally, I contributed to the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
+      <p>In the EVER 2024 Electric Vehicle Rally, I led the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
       
       <h3>Technical Implementation</h3>
       <p>My role began with problem-solving: analyzing task constraints and evaluating multiple control strategies (PID, MPC, Pure Pursuit). After several experiments, I selected and tuned the Pure Pursuit algorithm for reliable real-time tracking on the real vehicle.</p>
@@ -28,7 +28,8 @@ const projectsData = {
       
       <h3>Results and Impact</h3>
       <p>The project was a finalist effort, earning 2nd place nationwide. I'm grateful to mentors Eng. Ebrahim Abdelghafar and Eng. Ziad Osama for their technical guidance throughout this challenging real-world autonomous vehicle project.</p>
-    `
+    `,
+    images: [],
   },
   "autonomous-driving-ros": {
     title: "End-to-End Autonomous Driving Stack in ROS & CoppeliaSim — EVER 2024 Milestones",
@@ -39,7 +40,7 @@ const projectsData = {
     date: "2024",
     status: "3rd Place Egypt",
     video: "",
-    youtubeUrl: "https://youtu.be/NxfWj6YoS5Y",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>As part of the EVER 2024 Milestone Challenge, I led the development of a modular and robust autonomous driving software stack within the ROS Noetic + CoppeliaSim simulation environment. The challenge involved completing three progressive milestones that cumulatively assessed system-level autonomy.</p>
@@ -52,7 +53,8 @@ const projectsData = {
       
       <h3>Milestone 3 — Full Autonomy in Multi-Scenario Tracks</h3>
       <p>Architected the high-level autonomy stack to handle lane keeping, lane change maneuvers, obstacle avoidance, circular path navigation, and full traversal of a custom-designed urban city simulation with dynamic agents. Built a monocular depth estimation module using geometric scaling from bounding box and camera intrinsics.</p>
-    `
+    `,
+    images: [],
   },
   "shell-eco-marathon": {
     title: "Full-Stack Autonomous Driving System for Energy-Efficient Urban Navigation — Shell Eco-marathon APC 2025",
@@ -63,7 +65,7 @@ const projectsData = {
     date: "2025",
     status: "2nd Place Worldwide",
     video: "",
-    youtubeUrl: "https://youtu.be/fu94LlajxwI",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>As founder and lead engineer, I architected and developed a modular, performance-optimized, and energy-aware autonomous driving stack for the Shell Eco-marathon APC 2025, deployed on the CARLA simulator. The system was evaluated in complex urban driving scenarios with strict constraints on energy efficiency, real-time decision-making, and safety. Our team secured 2nd place globally out of 24 international teams.</p>
@@ -76,7 +78,8 @@ const projectsData = {
       
       <h3>Control Stack</h3>
       <p>Developed and benchmarked multiple control strategies including energy-aware MPC with a cost model that penalized acceleration effort and path deviation under dynamic constraints, and adaptive PID and Pure Pursuit as lightweight alternatives under tight compute budgets.</p>
-    `
+    `,
+    images: [],
   },
   "emirates-robotics": {
     title: "Autonomous Terrain Navigation & Object Disposal with Digital Twin — Emirates Robotics Competition 2025",
@@ -87,7 +90,7 @@ const projectsData = {
     date: "2025",
     status: "Competition Project",
     video: "",
-    youtubeUrl: "https://www.youtube.com/shorts/fDPwYn1E91c?feature=share",
+    youtubeUrl: "",
     article: `
       <h3>Project Overview</h3>
       <p>Collaborating remotely with Mohamed Ebrahim from Heriot-Watt University (UAE), I joined Team RADIANT to co-develop a full-stack autonomous solution for the Emirates Robotics Competition 2024. The mission: enable a mobile robot to navigate an unstructured, debris-filled terrain, classify and collect waste objects, and dispose of them into category-specific trash bins.</p>
@@ -100,7 +103,8 @@ const projectsData = {
       
       <h3>Hardware Integration & Deployment</h3>
       <p>Assisted in deploying the software stack to physical hardware using Raspberry Pi 4 as the ROS 2 compute platform. Worked alongside teammate Mahmoud El Rouby, who designed a custom servo-controlled robotic arm and gripper, which I helped control using Arduino PWM commands via ROS serial nodes.</p>
-    `
+    `,
+    images: [],
   },
   "f1tenth-racing": {
     title: "Advanced Autonomous Racing Algorithms — F1TENTH IROS 2024",
@@ -111,7 +115,7 @@ const projectsData = {
     date: "2024",
     status: "4th Place Global",
     video: "/f1tenth.mp4",
-    youtubeUrl: "https://youtu.be/dacXpVLSFjs",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
     article: `
       <h3>Project Overview</h3>
       <p>Competing against 58 teams globally, I developed a comprehensive autonomous racing software stack for the F1TENTH IROS 2024 challenge, achieving 4th place.</p>
@@ -124,7 +128,8 @@ const projectsData = {
       
       <h3>Trajectory Planning and Control</h3>
       <p>Created racing lines optimized for speed and safety, combined with a Pure Pursuit controller for smooth and accurate path tracking. This project demonstrated proficiency in combining reactive and deliberative autonomy layers to maximize racing performance on a scaled autonomous vehicle platform.</p>
-    `
+    `,
+    images: [],
   },
   "distance-alarm-ecu": {
     title: "Cost- and Power-Efficient Distance Alarm ECU Design Using a Single MCU",
@@ -136,6 +141,7 @@ const projectsData = {
     status: "Prototype Complete",
     video: "",
     youtubeUrl: "",
+    images: ["/PCB.jpeg"],
     article: `
       <h3>Project Overview</h3>
       <p>I designed and developed a Distance Alarm Electronic Control Unit (ECU) prototype optimized for cost, power, and resource efficiency, targeting an electric vehicle application.</p>
@@ -148,7 +154,8 @@ const projectsData = {
       
       <h3>Hardware Design & PCB Layout</h3>
       <p>Created the full schematic and conducted functional testing of sensor multiplexing and MCU interfacing in Proteus simulation environment before hardware implementation. Used Altium Designer to produce a compact and manufacturable PCB layout for the ECU, emphasizing signal integrity, power efficiency, and ease of integration.</p>
-    `
+    `,
+    images: ["/PCB.jpeg"],
   }
 };
 
@@ -258,6 +265,22 @@ const ProjectDetail = () => {
                           <polygon points="34,28 60,42 34,56" fill="white"/>
                         </svg>
                       </div>
+                    </div>
+                  </div>
+                )}
+                {project.images && project.images.length > 0 && (
+                  <div>
+                    <h4 className="text-lg font-medium text-gray-300 mb-3">Project Images</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {project.images.map((image, index) => (
+                        <div key={index} className="aspect-video rounded-lg overflow-hidden">
+                          <img
+                            src={image}
+                            alt={`Project Image ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}
