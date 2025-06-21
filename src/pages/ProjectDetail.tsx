@@ -4,6 +4,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Github, ExternalLink, Calendar, Tag } from "lucide-react";
 
+// Helper function to extract YouTube video ID from a URL
+function getYouTubeId(url: string): string | null {
+  const regExp = /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[1].length === 11) ? match[1] : null;
+}
+
 // Updated project data matching the new content
 const projectsData = {
   "autonomous-vehicle-ever": {
@@ -15,7 +22,7 @@ const projectsData = {
     date: "2024",
     status: "2nd Place Egypt",
     video: "",
-    youtubeUrl: "",
+    youtubeUrl: "https://youtu.be/17trZ1idB8U",
     article: `
       <h3>Project Overview</h3>
       <p>In the EVER 2024 Electric Vehicle Rally, I led the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
@@ -40,7 +47,7 @@ const projectsData = {
     date: "2024",
     status: "3rd Place Egypt",
     video: "",
-    youtubeUrl: "",
+    youtubeUrl: "https://youtu.be/NxfWj6YoS5Y",
     article: `
       <h3>Project Overview</h3>
       <p>As part of the EVER 2024 Milestone Challenge, I led the development of a modular and robust autonomous driving software stack within the ROS Noetic + CoppeliaSim simulation environment. The challenge involved completing three progressive milestones that cumulatively assessed system-level autonomy.</p>
@@ -65,7 +72,7 @@ const projectsData = {
     date: "2025",
     status: "2nd Place Worldwide",
     video: "",
-    youtubeUrl: "",
+    youtubeUrl: "https://youtu.be/fu94LlajxwI",
     article: `
       <h3>Project Overview</h3>
       <p>As founder and lead engineer, I architected and developed a modular, performance-optimized, and energy-aware autonomous driving stack for the Shell Eco-marathon APC 2025, deployed on the CARLA simulator. The system was evaluated in complex urban driving scenarios with strict constraints on energy efficiency, real-time decision-making, and safety. Our team secured 2nd place globally out of 24 international teams.</p>
@@ -90,7 +97,7 @@ const projectsData = {
     date: "2025",
     status: "Competition Project",
     video: "",
-    youtubeUrl: "",
+    youtubeUrl: "https://www.youtube.com/shorts/fDPwYn1E91c?feature=share",
     article: `
       <h3>Project Overview</h3>
       <p>Collaborating remotely with Mohamed Ebrahim from Heriot-Watt University (UAE), I joined Team RADIANT to co-develop a full-stack autonomous solution for the Emirates Robotics Competition 2024. The mission: enable a mobile robot to navigate an unstructured, debris-filled terrain, classify and collect waste objects, and dispose of them into category-specific trash bins.</p>
@@ -115,7 +122,7 @@ const projectsData = {
     date: "2024",
     status: "4th Place Global",
     video: "/f1tenth.mp4",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    youtubeUrl: "https://www.youtube.com/watch?v=dacXpVLSFjs",
     article: `
       <h3>Project Overview</h3>
       <p>Competing against 58 teams globally, I developed a comprehensive autonomous racing software stack for the F1TENTH IROS 2024 challenge, achieving 4th place.</p>
@@ -157,13 +164,6 @@ const projectsData = {
     `,
   }
 };
-
-// Helper function to extract YouTube video ID from a URL
-function getYouTubeId(url: string): string | null {
-  const regExp = /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[1].length === 11) ? match[1] : null;
-}
 
 const ProjectDetail = () => {
   const { slug } = useParams();
