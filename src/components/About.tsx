@@ -33,7 +33,8 @@ const About = () => {
                     <Button 
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                       onClick={() => {
-                        window.open('/hazem-abuelanin-resume.pdf', '_blank');
+                        const baseUrl = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+                        window.open(`${baseUrl}/hazem-abuelanin-resume.pdf`, '_blank');
                       }}
                     >
                       <Download className="mr-2 h-4 w-4" />
