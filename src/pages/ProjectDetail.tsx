@@ -8,17 +8,17 @@ import { ArrowLeft, Github, ExternalLink, Calendar, Tag } from "lucide-react";
 const projectsData = {
   "autonomous-vehicle-ever": {
     title: "Autonomous Vehicle Control for Infinity-Track Navigation — EVER 2024",
-    description: "Led the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
+    description: "Contributed to the design and implementation of the autonomous control system for a real-life electric car in EVER 2024. Developed YOLOv8-based vision model and Pure Pursuit controller for complex infinity-shaped cone track navigation over three laps.",
     skills: ["Pure Pursuit Controller", "YOLOv8", "Intel RealSense", "3D LiDAR", "Python", "ROS"],
     github: "#",
     demo: "#",
     date: "2024",
     status: "2nd Place Egypt",
     video: "",
-    youtubeUrl: "",
+    youtubeUrl: "https://youtu.be/17trZ1idB8U",
     article: `
       <h3>Project Overview</h3>
-      <p>In the EVER 2024 Electric Vehicle Rally, I led the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
+      <p>In the EVER 2024 Electric Vehicle Rally, I contributed to the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
       
       <h3>Technical Implementation</h3>
       <p>My role began with problem-solving: analyzing task constraints and evaluating multiple control strategies (PID, MPC, Pure Pursuit). After several experiments, I selected and tuned the Pure Pursuit algorithm for reliable real-time tracking on the real vehicle.</p>
@@ -39,7 +39,7 @@ const projectsData = {
     date: "2024",
     status: "3rd Place Egypt",
     video: "",
-    youtubeUrl: "",
+    youtubeUrl: "https://youtu.be/NxfWj6YoS5Y",
     article: `
       <h3>Project Overview</h3>
       <p>As part of the EVER 2024 Milestone Challenge, I led the development of a modular and robust autonomous driving software stack within the ROS Noetic + CoppeliaSim simulation environment. The challenge involved completing three progressive milestones that cumulatively assessed system-level autonomy.</p>
@@ -87,7 +87,7 @@ const projectsData = {
     date: "2025",
     status: "Competition Project",
     video: "",
-    youtubeUrl: "",
+    youtubeUrl: "https://www.youtube.com/shorts/fDPwYn1E91c?feature=share",
     article: `
       <h3>Project Overview</h3>
       <p>Collaborating remotely with Mohamed Ebrahim from Heriot-Watt University (UAE), I joined Team RADIANT to co-develop a full-stack autonomous solution for the Emirates Robotics Competition 2024. The mission: enable a mobile robot to navigate an unstructured, debris-filled terrain, classify and collect waste objects, and dispose of them into category-specific trash bins.</p>
@@ -111,7 +111,7 @@ const projectsData = {
     date: "2024",
     status: "4th Place Global",
     video: "/f1tenth.mp4",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    youtubeUrl: "https://youtu.be/dacXpVLSFjs",
     article: `
       <h3>Project Overview</h3>
       <p>Competing against 58 teams globally, I developed a comprehensive autonomous racing software stack for the F1TENTH IROS 2024 challenge, achieving 4th place.</p>
