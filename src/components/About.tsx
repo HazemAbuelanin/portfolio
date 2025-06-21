@@ -34,7 +34,7 @@ const About = () => {
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                       onClick={() => {
                         const link = document.createElement('a');
-                        link.href = '/resume.pdf';
+                        link.href = '/hazem-abuelanin-resume.pdf';
                         link.download = 'Hazem_Abuelanin_Resume.pdf';
                         link.click();
                       }}
