@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -85,10 +84,18 @@
   body {
     @apply bg-background text-foreground;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    /* Disable default middle mouse button behavior */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
   }
 }
 
