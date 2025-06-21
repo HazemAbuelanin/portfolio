@@ -97,7 +97,7 @@ const projectsData = {
     date: "2025",
     status: "Competition Project",
     video: "",
-    youtubeUrl: "https://www.youtube.com/shorts/fDPwYn1E91c?feature=share",
+    youtubeUrl: "https://youtu.be/nJol7PVzhdA",
     article: `
       <h3>Project Overview</h3>
       <p>Collaborating remotely with Mohamed Ebrahim from Heriot-Watt University (UAE), I joined Team RADIANT to co-develop a full-stack autonomous solution for the Emirates Robotics Competition 2024. The mission: enable a mobile robot to navigate an unstructured, debris-filled terrain, classify and collect waste objects, and dispose of them into category-specific trash bins.</p>
