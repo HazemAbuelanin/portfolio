@@ -141,7 +141,7 @@ const projectsData = {
     status: "Prototype Complete",
     video: "",
     youtubeUrl: "",
-    images: ["PCB.jpeg"],
+    images: ["./PCB.jpeg"],
     article: `
       <h3>Project Overview</h3>
       <p>I designed and developed a Distance Alarm Electronic Control Unit (ECU) prototype optimized for cost, power, and resource efficiency, targeting an electric vehicle application.</p>
@@ -271,18 +271,19 @@ const ProjectDetail = () => {
                   <div>
                     <h4 className="text-lg font-medium text-gray-300 mb-3">Project Images</h4>
                     <div className="grid md:grid-cols-2 gap-4">
-                      {project.images.map((image, index) => {
-                        const baseUrl = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
-                        return (
-                          <div key={index} className="aspect-video rounded-lg overflow-hidden">
-                            <img
-                              src={`${baseUrl}/${image}`}
-                              alt={`Project Image ${index + 1}`}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        );
-                      })}
+                      {project.images.map((image, index) => (
+                        <div key={index} className="aspect-video rounded-lg overflow-hidden">
+                          <img
+                            src={image}
+                            alt={`Project Image ${index + 1}`}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error(`Failed to load image: ${image}`);
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}
