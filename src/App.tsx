@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import AutoScroll from "./components/AutoScroll";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <AutoScroll />
       <BrowserRouter basename="/portfolio">
         <Routes>
           <Route path="/" element={<Index />} />
