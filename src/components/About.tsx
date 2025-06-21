@@ -33,10 +33,7 @@ const About = () => {
                     <Button 
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                       onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = '/hazem-abuelanin-resume.pdf';
-                        link.download = 'Hazem_Abuelanin_Resume.pdf';
-                        link.click();
+                        window.open('/hazem-abuelanin-resume.pdf', '_blank');
                       }}
                     >
                       <Download className="mr-2 h-4 w-4" />
