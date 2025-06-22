@@ -13,7 +13,6 @@ const Navigation = () => {
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" },
   ];
 
   useEffect(() => {
@@ -49,13 +48,13 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? "bg-gray-900/95 backdrop-blur-sm shadow-lg border-b border-gray-700" 
+        ? "bg-zinc-950/95 backdrop-blur-sm shadow-lg border-b border-zinc-800" 
         : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-bold text-xl text-white">
+          <div className="font-bold text-xl text-white transition-colors duration-300 hover:text-blue-400">
             Hazem Abuelanin
           </div>
 
@@ -65,7 +64,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-blue-400 relative ${
+                className={`text-sm font-medium transition-all duration-300 hover:text-blue-400 hover:scale-105 relative ${
                   activeSection === item.id
                     ? "text-blue-400"
                     : "text-gray-300"
@@ -73,7 +72,7 @@ const Navigation = () => {
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-full"></div>
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-full transition-all duration-300"></div>
                 )}
               </button>
             ))}
@@ -83,7 +82,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden text-white hover:bg-gray-800"
+            className="md:hidden text-white hover:bg-zinc-800 transition-all duration-300"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -92,14 +91,14 @@ const Navigation = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 bg-gray-900/95 backdrop-blur-sm border-t border-gray-700 rounded-b-lg">
+          <div className="md:hidden py-4 bg-zinc-950/95 backdrop-blur-sm border-t border-zinc-800 rounded-b-lg transition-all duration-300">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-colors hover:text-blue-400 hover:bg-gray-800/50 ${
+                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-blue-400 hover:bg-zinc-800/50 ${
                   activeSection === item.id
-                    ? "text-blue-400 bg-gray-800/50"
+                    ? "text-blue-400 bg-zinc-800/50"
                     : "text-gray-300"
                 }`}
               >
