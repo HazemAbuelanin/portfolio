@@ -1,11 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Github, Linkedin, Download, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gray-950 relative overflow-hidden pt-16">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-gray-900 relative overflow-hidden pt-16">
       {/* Simplified background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
@@ -15,25 +15,14 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Profile Image */}
-          <div className="flex justify-center mb-6">
-            <Card className="p-2 bg-gray-900/60 border border-gray-700 rounded-2xl">
+          <div className="flex justify-center mb-8">
+            <Card className="p-2 bg-gray-800/50 border border-gray-700 rounded-2xl">
               <img 
                 src={`${import.meta.env.BASE_URL}lovable-uploads/f65349ee-5df9-41e8-88cb-9179a45057b5.png`} 
                 alt="Hazem Abuelanin" 
                 className="w-48 h-48 object-cover rounded-xl"
               />
             </Card>
-          </div>
-
-          {/* Email Link */}
-          <div className="flex justify-center mb-6">
-            <a 
-              href="mailto:hazem.abuelanin@gmail.com"
-              className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors duration-300 group"
-            >
-              <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-              <span className="text-sm font-medium">hazem.abuelanin@gmail.com</span>
-            </a>
           </div>
 
           {/* Name and Title */}
@@ -57,7 +46,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-300"
+              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white"
               onClick={() => window.open('https://github.com/HazemAbuelanin', '_blank')}
             >
               <Github className="mr-2 h-5 w-5" />
@@ -66,7 +55,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-300"
+              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white"
               onClick={() => window.open('https://www.linkedin.com/in/hazem-abuelanin-751b4421b/', '_blank')}
             >
               <Linkedin className="mr-2 h-5 w-5" />
@@ -75,7 +64,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-300"
+              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white"
               onClick={() => {
                 const baseUrl = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
                 window.open(`${baseUrl}/hazem-abuelanin-resume.pdf`, '_blank');
@@ -83,6 +72,14 @@ const Hero = () => {
             >
               <Download className="mr-2 h-5 w-5" />
               Resume
+            </Button>
+            <Button 
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+              size="lg"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Mail className="mr-2 h-5 w-5" />
+              Get in Touch
             </Button>
           </div>
         </div>

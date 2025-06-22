@@ -13,6 +13,7 @@ const Navigation = () => {
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
   ];
 
   useEffect(() => {
@@ -48,7 +49,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? "bg-gray-950/95 backdrop-blur-sm shadow-lg border-b border-gray-800" 
+        ? "bg-gray-900/95 backdrop-blur-sm shadow-lg border-b border-gray-700" 
         : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6">
@@ -64,7 +65,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-all duration-300 hover:text-blue-400 relative ${
+                className={`text-sm font-medium transition-colors hover:text-blue-400 relative ${
                   activeSection === item.id
                     ? "text-blue-400"
                     : "text-gray-300"
@@ -72,7 +73,7 @@ const Navigation = () => {
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-full transition-all duration-300"></div>
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-full"></div>
                 )}
               </button>
             ))}
@@ -82,7 +83,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden text-white hover:bg-gray-800 transition-all duration-300"
+            className="md:hidden text-white hover:bg-gray-800"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -91,12 +92,12 @@ const Navigation = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 bg-gray-950/95 backdrop-blur-sm border-t border-gray-800 rounded-b-lg transition-all duration-300">
+          <div className="md:hidden py-4 bg-gray-900/95 backdrop-blur-sm border-t border-gray-700 rounded-b-lg">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-300 hover:text-blue-400 hover:bg-gray-800/50 ${
+                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-colors hover:text-blue-400 hover:bg-gray-800/50 ${
                   activeSection === item.id
                     ? "text-blue-400 bg-gray-800/50"
                     : "text-gray-300"
