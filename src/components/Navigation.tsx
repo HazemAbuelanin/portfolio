@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -54,12 +55,8 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-bold text-xl">
-            <span className={`transition-colors duration-300 ${
-              scrolled ? "text-white" : "text-white"
-            }`}>
-              Hazem Abuelanin
-            </span>
+          <div className="font-bold text-xl text-white">
+            Hazem Abuelanin
           </div>
 
           {/* Desktop Navigation */}
@@ -71,9 +68,7 @@ const Navigation = () => {
                 className={`text-sm font-medium transition-colors hover:text-blue-400 relative ${
                   activeSection === item.id
                     ? "text-blue-400"
-                    : scrolled 
-                      ? "text-gray-300" 
-                      : "text-white/90"
+                    : "text-gray-300"
                 }`}
               >
                 {item.label}
@@ -88,9 +83,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="sm"
-            className={`md:hidden transition-colors ${
-              scrolled ? "text-white hover:bg-gray-800" : "text-white hover:bg-white/10"
-            }`}
+            className="md:hidden text-white hover:bg-gray-800"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -99,14 +92,14 @@ const Navigation = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 bg-gray-900/95 backdrop-blur-sm border-t border-gray-700 rounded-b-lg shadow-lg">
+          <div className="md:hidden py-4 bg-gray-900/95 backdrop-blur-sm border-t border-gray-700 rounded-b-lg">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-colors hover:text-blue-400 hover:bg-blue-500/10 ${
+                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-colors hover:text-blue-400 hover:bg-gray-800/50 ${
                   activeSection === item.id
-                    ? "text-blue-400 bg-blue-500/10"
+                    ? "text-blue-400 bg-gray-800/50"
                     : "text-gray-300"
                 }`}
               >
