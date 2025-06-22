@@ -11,7 +11,7 @@ const projects = [
     description: "High-speed autonomous racing vehicle with advanced SLAM, path planning, and real-time control systems.",
     image: "/f1tenth.mp4",
     technologies: ["ROS2", "Python", "SLAM", "Computer Vision", "Control Systems"],
-    slug: "f1tenth-autonomous-racing",
+    slug: "f1tenth-racing",
     githubUrl: "https://github.com/HazemAbuelanin",
     liveUrl: "#"
   },
@@ -45,27 +45,27 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gray-900">
+    <section id="projects" className="py-20 bg-gray-950">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto"></div>
+          <div className="w-16 h-0.5 bg-blue-500 mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {projects.map((project) => (
             <Card 
               key={project.id} 
-              className="bg-gray-800/60 border border-gray-700 hover:bg-gray-800/80 transition-all duration-300 cursor-pointer group hover:scale-105"
+              className="bg-gray-900/80 border border-gray-800 hover:bg-gray-900 transition-all duration-300 cursor-pointer group hover:scale-[1.02]"
               onClick={() => handleProjectClick(project.slug)}
             >
-              <div className="aspect-video bg-gray-700 rounded-t-lg overflow-hidden">
+              <div className="aspect-video bg-gray-800 rounded-t-lg overflow-hidden">
                 {project.image.endsWith('.mp4') ? (
                   <video 
                     src={project.image} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                     muted 
                     loop 
                     autoPlay
@@ -74,26 +74,26 @@ const Projects = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 )}
               </div>
               
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 text-sm mb-4 line-clamp-3">{project.description}</p>
+              <CardContent className="p-5">
+                <h3 className="text-lg font-bold text-white mb-3">{project.title}</h3>
+                <p className="text-gray-400 text-sm mb-4 line-clamp-3">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.slice(0, 3).map((tech) => (
                     <span 
                       key={tech} 
-                      className="text-xs bg-blue-600/20 text-blue-300 px-2 py-1 rounded-full border border-blue-600/30"
+                      className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-md"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-gray-500">
                       +{project.technologies.length - 3} more
                     </span>
                   )}
@@ -103,7 +103,7 @@ const Projects = () => {
                   <Button 
                     size="sm" 
                     variant="outline"
-                    className="border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300"
+                    className="border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-300"
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(project.githubUrl, '_blank');
