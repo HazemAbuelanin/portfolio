@@ -4,7 +4,7 @@ import { Target, Heart } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-800">
+    <section id="about" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-6">
@@ -16,7 +16,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Main Content */}
-            <Card className="md:col-span-2 p-8 bg-gray-700/50 border border-gray-600">
+            <Card className="md:col-span-2 p-8 bg-gray-800/60 border border-gray-700">
               <CardContent className="pt-0">
                 <div className="space-y-6">
                   <p className="text-lg text-gray-300 leading-relaxed">
@@ -31,7 +31,7 @@ const About = () => {
 
             {/* Side Cards */}
             <div className="space-y-6">
-              <Card className="p-6 bg-gray-700/50 border border-gray-600">
+              <Card className="p-6 bg-gray-800/60 border border-gray-700">
                 <CardContent className="pt-0">
                   <div className="flex items-center mb-4">
                     <Target className="h-5 w-5 text-blue-400 mr-2" />
@@ -43,7 +43,7 @@ const About = () => {
                 </CardContent>
               </Card>
 
-              <Card className="p-6 bg-gray-700/50 border border-gray-600">
+              <Card className="p-6 bg-gray-800/60 border border-gray-700">
                 <CardContent className="pt-0">
                   <div className="flex items-center mb-4">
                     <Heart className="h-5 w-5 text-purple-400 mr-2" />
