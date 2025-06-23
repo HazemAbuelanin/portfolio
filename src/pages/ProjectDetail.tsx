@@ -1,3 +1,4 @@
+
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,6 +24,8 @@ const projectsData = {
     status: "2nd Place Egypt",
     video: "",
     youtubeUrl: "https://youtu.be/17trZ1idB8U",
+    competitionUrl: undefined,
+    images: [],
     article: `
       <h3>Project Overview</h3>
       <p>In the EVER 2024 Electric Vehicle Rally, I led the design and implementation of the autonomous control system for the real-life electric car made by Ain Shams University to complete a complex infinity-shaped cone track over three laps without collisions.</p>
@@ -36,7 +39,6 @@ const projectsData = {
       <h3>Results and Impact</h3>
       <p>The project was a finalist effort, earning 2nd place nationwide. I'm grateful to mentors Eng. Ebrahim Abdelghafar and Eng. Ziad Osama for their technical guidance throughout this challenging real-world autonomous vehicle project.</p>
     `,
-    images: [],
   },
   "autonomous-driving-ros": {
     title: "End-to-End Autonomous Driving Stack in ROS & CoppeliaSim — EVER 2024 Milestones",
@@ -48,6 +50,8 @@ const projectsData = {
     status: "3rd Place Egypt",
     video: "",
     youtubeUrl: "https://youtu.be/NxfWj6YoS5Y",
+    competitionUrl: undefined,
+    images: [],
     article: `
       <h3>Project Overview</h3>
       <p>As part of the EVER 2024 Milestone Challenge, I led the development of a modular and robust autonomous driving software stack within the ROS Noetic + CoppeliaSim simulation environment. The challenge involved completing three progressive milestones that cumulatively assessed system-level autonomy.</p>
@@ -61,7 +65,6 @@ const projectsData = {
       <h3>Milestone 3 — Full Autonomy in Multi-Scenario Tracks</h3>
       <p>Architected the high-level autonomy stack to handle lane keeping, lane change maneuvers, obstacle avoidance, circular path navigation, and full traversal of a custom-designed urban city simulation with dynamic agents. Built a monocular depth estimation module using geometric scaling from bounding box and camera intrinsics.</p>
     `,
-    images: [],
   },
   "shell-eco-marathon": {
     title: "Full-Stack Autonomous Driving System for Energy-Efficient Urban Navigation — Shell Eco-marathon APC 2025",
@@ -104,6 +107,8 @@ const projectsData = {
     status: "Competition Project",
     video: "",
     youtubeUrl: "https://youtu.be/nJol7PVzhdA",
+    competitionUrl: undefined,
+    images: [],
     article: `
       <h3>Project Overview</h3>
       <p>Collaborating remotely with Mohamed Ebrahim from Heriot-Watt University (UAE), I joined Team RADIANT to co-develop a full-stack autonomous solution for the Emirates Robotics Competition 2024. The mission: enable a mobile robot to navigate an unstructured, debris-filled terrain, classify and collect waste objects, and dispose of them into category-specific trash bins.</p>
@@ -117,7 +122,6 @@ const projectsData = {
       <h3>Hardware Integration & Deployment</h3>
       <p>Assisted in deploying the software stack to physical hardware using Raspberry Pi 4 as the ROS 2 compute platform. Worked alongside teammate Mahmoud El Rouby, who designed a custom servo-controlled robotic arm and gripper, which I helped control using Arduino PWM commands via ROS serial nodes.</p>
     `,
-    images: [],
   },
   "f1tenth-racing": {
     title: "Advanced Autonomous Racing Algorithms — F1TENTH IROS 2024",
@@ -129,6 +133,8 @@ const projectsData = {
     status: "4th Place Global",
     video: `${import.meta.env.BASE_URL}f1tenth.mp4`,
     youtubeUrl: "https://www.youtube.com/watch?v=dacXpVLSFjs",
+    competitionUrl: undefined,
+    images: [],
     article: `
       <h3>Project Overview</h3>
       <p>Competing against 58 teams globally, I developed a comprehensive autonomous racing software stack for the F1TENTH IROS 2024 challenge, achieving 4th place.</p>
@@ -142,7 +148,6 @@ const projectsData = {
       <h3>Trajectory Planning and Control</h3>
       <p>Created racing lines optimized for speed and safety, combined with a Pure Pursuit controller for smooth and accurate path tracking. This project demonstrated proficiency in combining reactive and deliberative autonomy layers to maximize racing performance on a scaled autonomous vehicle platform.</p>
     `,
-    images: [],
   },
   "distance-alarm-ecu": {
     title: "Cost- and Power-Efficient Distance Alarm ECU Design Using a Single MCU",
@@ -154,6 +159,7 @@ const projectsData = {
     status: "Prototype Complete",
     video: "",
     youtubeUrl: "",
+    competitionUrl: undefined,
     images: [
       `${import.meta.env.BASE_URL}lovable-uploads/6ebd8f71-5221-40d1-a821-980e6f9e7c56.png`,
       `${import.meta.env.BASE_URL}lovable-uploads/a43133e5-3252-41c5-9590-93c6b7883f31.png`,
