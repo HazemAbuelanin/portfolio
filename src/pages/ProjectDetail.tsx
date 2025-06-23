@@ -1,4 +1,3 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -74,6 +73,10 @@ const projectsData = {
     status: "2nd Place Worldwide",
     video: "",
     youtubeUrl: "https://youtu.be/fu94LlajxwI",
+    competitionUrl: "https://www.shellecomarathon.com/2025-programme/autonomous-programming-competition.html",
+    images: [
+      `${import.meta.env.BASE_URL}lovable-uploads/d5205fb1-9c0c-4b16-bb6f-2c6e0bccab85.png`
+    ],
     article: `
       <h3>Project Overview</h3>
       <p>As founder and lead engineer, I architected and developed a modular, performance-optimized, and energy-aware autonomous driving stack for the Shell Eco-marathon APC 2025, deployed on the CARLA simulator. The system was evaluated in complex urban driving scenarios with strict constraints on energy efficiency, real-time decision-making, and safety. Our team secured 2nd place globally out of 24 international teams.</p>
@@ -86,8 +89,10 @@ const projectsData = {
       
       <h3>Control Stack</h3>
       <p>Developed and benchmarked multiple control strategies including energy-aware MPC with a cost model that penalized acceleration effort and path deviation under dynamic constraints, and adaptive PID and Pure Pursuit as lightweight alternatives under tight compute budgets.</p>
+      
+      <h3>Competition Results</h3>
+      <p>Achieved 2nd place worldwide in the Shell Eco-marathon Autonomous Programming Competition 2025, competing against 24 international teams. Our team "Shoubra Racing Team" demonstrated exceptional performance in energy efficiency and autonomous navigation capabilities.</p>
     `,
-    images: [],
   },
   "emirates-robotics": {
     title: "Autonomous Terrain Navigation & Object Disposal with Digital Twin — Emirates Robotics Competition 2025",
@@ -324,10 +329,28 @@ const ProjectDetail = () => {
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
                 <div className="space-y-3">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                    <Github className="mr-2 h-4 w-4" />
-                    View Source Code
-                  </Button>
+                  {project.competitionUrl ? (
+                    <>
+                      <Button 
+                        className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
+                        onClick={() => window.open(project.competitionUrl, "_blank")}
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        View Competition
+                      </Button>
+                      <div className="text-center">
+                        <p className="text-sm text-gray-400 mb-2">Source Code & Documentation</p>
+                        <Badge variant="outline" className="bg-yellow-600/20 text-yellow-300 border-yellow-500">
+                          In Progress
+                        </Badge>
+                      </div>
+                    </>
+                  ) : (
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                      <Github className="mr-2 h-4 w-4" />
+                      View Source Code
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
