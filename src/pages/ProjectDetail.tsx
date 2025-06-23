@@ -148,7 +148,7 @@ const projectsData = {
     status: "Prototype Complete",
     video: "",
     youtubeUrl: "",
-    images: ["/PCB.jpeg", "/Car.jpeg"],
+    images: ["/PCB.jpeg", "/Car.jpeg", "/lovable-uploads/6ebd8f71-5221-40d1-a821-980e6f9e7c56.png", "/lovable-uploads/a43133e5-3252-41c5-9590-93c6b7883f31.png"],
     article: `
       <h3>Project Overview</h3>
       <p>I designed and developed a Distance Alarm Electronic Control Unit (ECU) prototype optimized for cost, power, and resource efficiency, targeting an electric vehicle application.</p>
