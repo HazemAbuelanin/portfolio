@@ -1,3 +1,4 @@
+
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -121,7 +122,7 @@ const projectsData = {
     demo: "#",
     date: "2024",
     status: "4th Place Global",
-    video: "/f1tenth.mp4",
+    video: `${import.meta.env.BASE_URL}f1tenth.mp4`,
     youtubeUrl: "https://www.youtube.com/watch?v=dacXpVLSFjs",
     article: `
       <h3>Project Overview</h3>
@@ -149,10 +150,10 @@ const projectsData = {
     video: "",
     youtubeUrl: "",
     images: [
-      "/lovable-uploads/6ebd8f71-5221-40d1-a821-980e6f9e7c56.png",
-      "/lovable-uploads/a43133e5-3252-41c5-9590-93c6b7883f31.png",
-      "/PCB.jpeg", 
-      "/Car.jpeg"
+      `${import.meta.env.BASE_URL}lovable-uploads/6ebd8f71-5221-40d1-a821-980e6f9e7c56.png`,
+      `${import.meta.env.BASE_URL}lovable-uploads/a43133e5-3252-41c5-9590-93c6b7883f31.png`,
+      `${import.meta.env.BASE_URL}PCB.jpeg`, 
+      `${import.meta.env.BASE_URL}Car.jpeg`
     ],
     article: `
       <h3>Project Overview</h3>
