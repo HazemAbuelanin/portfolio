@@ -20,7 +20,16 @@ const About = () => {
               <CardContent className="pt-0">
                 <div className="space-y-6">
                   <p className="text-lg text-gray-300 leading-relaxed transition-colors duration-300">
-                    Founder of the first autonomous racing team at my university. I've led and contributed to award-winning projects in real-world and simulated robotics — from self-driving cars and mobile robots to full-stack autonomy in global competitions. My work bridges AI, control systems, computer vision, and embedded hardware.
+                    Founder of the{" "}
+                    <a 
+                      href="https://www.linkedin.com/company/shoubra-racing-team/posts/?feedView=all" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 underline transition-colors duration-300"
+                    >
+                      first autonomous racing team
+                    </a>{" "}
+                    at my university. I've led and contributed to award-winning projects in real-world and simulated robotics — from self-driving cars and mobile robots to full-stack autonomy in global competitions. My work bridges AI, control systems, computer vision, and embedded hardware.
                   </p>
                   <p className="text-lg text-gray-300 leading-relaxed transition-colors duration-300">
                     As a Senior Computer Engineering student at Benha University - Shoubra Faculty of Engineering, my expertise spans across Robotics, Autonomous Systems, Physical AI and Embedded Systems and I'm particularly fascinated by Physical AI and how intelligent systems can interact with the physical world.
