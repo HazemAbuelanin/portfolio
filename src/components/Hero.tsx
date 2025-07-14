@@ -20,7 +20,7 @@ const Hero = () => {
               <img 
                 src={`${import.meta.env.BASE_URL}lovable-uploads/c09872d6-9123-48e8-a401-6e587557dfcf.png`} 
                 alt="Hazem Abuelanin" 
-                className="w-48 h-48 object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                className="w-48 h-48 object-cover object-top rounded-xl transition-transform duration-300 hover:scale-105"
               />
             </Card>
           </div>
