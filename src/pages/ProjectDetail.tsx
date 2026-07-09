@@ -7,9 +7,36 @@ import { ArrowLeft, Github, ExternalLink, Calendar, Tag } from "lucide-react";
 import data from "@/data/portfolioData.json";
 
 function getYouTubeId(url: string): string | null {
-  const regExp = /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[1].length === 11) ? match[1] : null;
+  if (!url) return null;
+  const cleanUrl = url.trim();
+
+  try {
+    const parsed = new URL(cleanUrl);
+    if (parsed.hostname.includes("youtube.com")) {
+      if (parsed.pathname.startsWith("/shorts/")) {
+        const id = parsed.pathname.split("/")[2];
+        if (id && id.length === 11) return id;
+      }
+      if (parsed.pathname.startsWith("/embed/")) {
+        const id = parsed.pathname.split("/")[2];
+        if (id && id.length === 11) return id;
+      }
+      const v = parsed.searchParams.get("v");
+      if (v && v.length === 11) return v;
+    } else if (parsed.hostname.includes("youtu.be")) {
+      const id = parsed.pathname.substring(1);
+      if (id && id.length === 11) return id;
+    }
+  } catch (e) {
+    // fallback to regex
+  }
+
+  const regExp = /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
+  const match = cleanUrl.match(regExp);
+  if (match && match[1] && match[1].length === 11) {
+    return match[1];
+  }
+  return null;
 }
 
 const ProjectDetail = () => {
