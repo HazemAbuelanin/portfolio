@@ -1,8 +1,9 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail } from "lucide-react";
+import data from "@/data/portfolioData.json";
 
 const Contact = () => {
+  const { profile } = data;
   return (
     <section id="contact" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
@@ -27,10 +28,10 @@ const Contact = () => {
                 <div className="text-left">
                   <p className="font-medium text-gray-300 text-lg">Email</p>
                   <a 
-                    href="mailto:hazem.abuelanin@gmail.com"
+                    href={`mailto:${profile.email}`}
                     className="text-blue-400 text-xl hover:text-blue-300 transition-colors"
                   >
-                    hazem.abuelanin@gmail.com
+                    {profile.email}
                   </a>
                 </div>
               </div>

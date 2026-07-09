@@ -1,8 +1,9 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Heart } from "lucide-react";
+import data from "@/data/portfolioData.json";
 
 const About = () => {
+  const { profile } = data;
   return (
     <section id="about" className="py-20 bg-zinc-900">
       <div className="container mx-auto px-6">
@@ -19,21 +20,13 @@ const About = () => {
             <Card className="md:col-span-2 p-8 bg-zinc-800/50 border border-zinc-700 transition-all duration-300 hover:bg-zinc-800/70 hover:border-zinc-600">
               <CardContent className="pt-0">
                 <div className="space-y-6">
-                  <p className="text-lg text-gray-300 leading-relaxed transition-colors duration-300">
-                    Founder of the{" "}
-                    <a 
-                      href="https://www.linkedin.com/company/shoubra-racing-team/posts/?feedView=all" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 underline transition-colors duration-300"
-                    >
-                      first autonomous racing team
-                    </a>{" "}
-                    at my university. I've led and contributed to award-winning projects in real-world and simulated robotics — from self-driving cars and mobile robots to full-stack autonomy in global competitions. My work bridges AI, control systems, computer vision, and embedded hardware.
-                  </p>
-                  <p className="text-lg text-gray-300 leading-relaxed transition-colors duration-300">
-                    As a Senior Computer Engineering student at Benha University - Shoubra Faculty of Engineering, my expertise spans across Robotics, Autonomous Systems, Physical AI and Embedded Systems and I'm particularly fascinated by Physical AI and how intelligent systems can interact with the physical world.
-                  </p>
+                  {profile.aboutParagraphs.map((paragraph, index) => (
+                    <p
+                      key={index}
+                      className="text-lg text-gray-300 leading-relaxed transition-colors duration-300"
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -47,7 +40,7 @@ const About = () => {
                     <h4 className="font-bold text-white">Goals</h4>
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed transition-colors duration-300">
-                    Build intelligent, efficient, and deployable robotic systems. Lead innovation across autonomy, AI, and embedded hardware. Keep exploring — from racing robots to real-world impact.
+                    {profile.goals}
                   </p>
                 </CardContent>
               </Card>
@@ -59,11 +52,11 @@ const About = () => {
                     <h4 className="font-bold text-white">Interests</h4>
                   </div>
                   <ul className="text-gray-300 text-sm space-y-1">
-                    <li className="transition-colors duration-300 hover:text-gray-200">• Autonomous Vehicles & Robotics</li>
-                    <li className="transition-colors duration-300 hover:text-gray-200">• AI for Real-World Systems</li>
-                    <li className="transition-colors duration-300 hover:text-gray-200">• Embedded & Energy-Efficient Systems</li>
-                    <li className="transition-colors duration-300 hover:text-gray-200">• Digital Twins & Simulation</li>
-                    <li className="transition-colors duration-300 hover:text-gray-200">• Full-Stack System Architecture</li>
+                    {profile.interests.map((interest, index) => (
+                      <li key={index} className="transition-colors duration-300 hover:text-gray-200">
+                        • {interest}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
