@@ -6,11 +6,11 @@
     "email": "hazem.abuelanin@gmail.com",
     "github": "https://github.com/HazemAbuelanin",
     "linkedin": "https://www.linkedin.com/in/hazem-abuelanin-751b4421b/",
-    "profileImage": "lovable-uploads/c09872d6-9123-48e8-a401-6e587557dfcf.png",
+    "profileImage": "lovable-uploads/Screenshot_from_2026-05-13_23-01-48.png",
     "resumePath": "hazem-abuelanin-resume.pdf",
     "aboutParagraphs": [
       "I am a Software Engineer specializing in Artificial Intelligence, Robotics, and Autonomous Systems. My work focuses on designing AI-driven software that enables machines to perceive, understand, and interact with the physical world through computer vision, machine learning, localization, perception, and embedded computing. I enjoy turning research concepts into complete engineering systems that operate reliably in both simulation and real-world environments.",
-      "My experience spans robotics software engineering, machine learning, autonomous controlling, intelligent perception, state estimation, sensor processing, and edge AI deployment. I founded the first autonomous racing team at Benha University and have contributed to award-winning autonomous systems in international competitions while developing software for real robotic platforms. I enjoy solving multidisciplinary engineering problems where artificial intelligence, software, and hardware come together to build capable autonomous machines."
+      "My experience spans software & systems engineering, robotics, machine learning, autonomous controlling, intelligent perception, state estimation, sensor processing, and edge AI deployment. I founded the first autonomous racing team at Benha University and have contributed to award-winning autonomous systems in international competitions while developing software for real robotic platforms. I enjoy solving multidisciplinary engineering problems where artificial intelligence, software, and hardware come together to build capable autonomous machines."
     ],
     "goals": "Build reliable AI-powered autonomous systems that combine perception, machine learning, robotics software, and embedded computing to solve real-world challenges. Continue advancing toward developing intelligent robotic platforms capable of operating safely and autonomously in complex environments.",
     "interests": [
@@ -138,7 +138,7 @@
       ],
       "status": "Competition Project",
       "date": "2025",
-      "featured": false,
+      "featured": true,
       "githubUrl": "#",
       "youtubeUrl": "https://youtu.be/nJol7PVzhdA",
       "competitionUrl": null,
@@ -160,7 +160,7 @@
       ],
       "status": "3rd Place Egypt",
       "date": "2024",
-      "featured": true,
+      "featured": false,
       "githubUrl": "#",
       "youtubeUrl": "https://youtu.be/NxfWj6YoS5Y",
       "competitionUrl": null,
