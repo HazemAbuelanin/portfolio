@@ -14,17 +14,13 @@ function adminSavePlugin() {
   return {
     name: "portfolio-admin-save",
     configureServer(server: import("vite").ViteDevServer) {
+      // ── Save JSON ─────────────────────────────────────────────────
       server.middlewares.use("/api/save-portfolio", (req, res) => {
-        if (req.method !== "POST") {
-          res.writeHead(405);
-          res.end("Method Not Allowed");
-          return;
-        }
+        if (req.method !== "POST") { res.writeHead(405); res.end("Method Not Allowed"); return; }
         let body = "";
         req.on("data", (chunk: Buffer) => (body += chunk.toString()));
         req.on("end", () => {
           try {
-            // Validate it's valid JSON before writing
             JSON.parse(body);
             const filePath = path.resolve(__dirname, "src/data/portfolioData.json");
             fs.writeFileSync(filePath, body, "utf-8");
@@ -34,7 +30,30 @@ function adminSavePlugin() {
           } catch (e) {
             res.writeHead(400, { "Content-Type": "application/json" });
             res.end(JSON.stringify({ success: false, error: String(e) }));
-            console.error("[admin-save] ❌ Error:", e);
+          }
+        });
+      });
+
+      // ── Upload Media ──────────────────────────────────────────────
+      server.middlewares.use("/api/upload-media", (req, res) => {
+        if (req.method !== "POST") { res.writeHead(405); res.end("Method Not Allowed"); return; }
+        const filename = (req.headers["x-filename"] as string) || `upload-${Date.now()}.bin`;
+        const safe = filename.replace(/[^a-zA-Z0-9._-]/g, "_");
+        const uploadDir = path.resolve(__dirname, "public/lovable-uploads");
+        if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+        const outPath = path.join(uploadDir, safe);
+        const chunks: Buffer[] = [];
+        req.on("data", (chunk: Buffer) => chunks.push(chunk));
+        req.on("end", () => {
+          try {
+            fs.writeFileSync(outPath, Buffer.concat(chunks));
+            const publicPath = `lovable-uploads/${safe}`;
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ success: true, path: publicPath }));
+            console.log(`[admin-upload] ✅ Saved ${publicPath}`);
+          } catch (e) {
+            res.writeHead(500, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ success: false, error: String(e) }));
           }
         });
       });

@@ -8,6 +8,7 @@ import ProjectsManager from "@/components/admin/ProjectsManager";
 import SkillsManager from "@/components/admin/SkillsManager";
 import ProfileManager from "@/components/admin/ProfileManager";
 import type { ProjectEntry } from "@/components/admin/ProjectModal";
+import type { PendingFile } from "@/components/admin/ImageUploader";
 
 // ─── CHANGE YOUR PIN HERE ─────────────────────────────────────────
 const ADMIN_PIN = "2402";
@@ -39,6 +40,14 @@ export default function Admin() {
   // ── Data state ────────────────────────────────────────────────────
   const [data, setData] = useState<PortfolioData>(initialData as PortfolioData);
   const [tab, setTab] = useState<Tab>("projects");
+  const [pendingUploads, setPendingUploads] = useState<PendingFile[]>([]);
+
+  const mergePending = (files: PendingFile[]) =>
+    setPendingUploads(prev => {
+      const map = new Map(prev.map(f => [f.publicPath, f]));
+      files.forEach(f => map.set(f.publicPath, f));
+      return [...map.values()];
+    });
 
   const updateProjects = useCallback((p: ProjectEntry[]) =>
     setData(d => ({ ...d, projects: p })), []);
@@ -83,6 +92,28 @@ export default function Admin() {
     setTimeout(() => setSaveStatus("idle"), 4000);
   };
 
+  // ── GitHub API helpers ────────────────────────────────────────────
+  const getFileSha = async (apiUrl: string, headers: Record<string, string>, ref: string): Promise<string> => {
+    const r = await fetch(`${apiUrl}?ref=${ref}`, { headers });
+    if (!r.ok) throw new Error(`Cannot fetch file SHA: ${r.status} ${await r.text()}`);
+    const { sha } = await r.json() as { sha: string };
+    return sha;
+  };
+
+  const putGitHubFile = async (
+    filePath: string,
+    contentBase64: string,
+    sha: string | null,
+    message: string,
+    headers: Record<string, string>
+  ): Promise<void> => {
+    const apiUrl = `https://api.github.com/repos/${ghOwner}/${ghRepo}/contents/${filePath}`;
+    const body: Record<string, unknown> = { message, content: contentBase64, branch: ghBranch };
+    if (sha) body.sha = sha;
+    const res = await fetch(apiUrl, { method: "PUT", headers, body: JSON.stringify(body) });
+    if (!res.ok) throw new Error(`PUT ${filePath} failed: ${res.status} ${await res.text()}`);
+  };
+
   // ── GitHub API deploy ─────────────────────────────────────────────
   const deployGitHub = async () => {
     if (!ghToken || !ghOwner || !ghRepo) {
@@ -90,17 +121,13 @@ export default function Admin() {
       setDeployMsg("Fill in Token, Owner, and Repo first.");
       return;
     }
-    // Save tokens to localStorage (only stays in YOUR browser)
     localStorage.setItem("admin_gh_token",  ghToken);
     localStorage.setItem("admin_gh_owner",  ghOwner);
     localStorage.setItem("admin_gh_repo",   ghRepo);
     localStorage.setItem("admin_gh_branch", ghBranch);
 
     setDeployStatus("saving");
-    setDeployMsg("Fetching current file SHA...");
 
-    const filePath = "src/data/portfolioData.json";
-    const apiBase = `https://api.github.com/repos/${ghOwner}/${ghRepo}/contents/${filePath}`;
     const headers = {
       Authorization: `Bearer ${ghToken}`,
       "Content-Type": "application/json",
@@ -108,28 +135,38 @@ export default function Admin() {
     };
 
     try {
-      // Get current SHA
-      const getRes = await fetch(`${apiBase}?ref=${ghBranch}`, { headers });
-      if (!getRes.ok) throw new Error(`Could not fetch file: ${getRes.status} ${await getRes.text()}`);
-      const { sha } = await getRes.json() as { sha: string };
+      // 1. Upload any pending image files first
+      const stillPending = pendingUploads.filter(f => f.dataBase64);
+      if (stillPending.length) {
+        setDeployMsg(`Uploading ${stillPending.length} image(s) to GitHub...`);
+        for (const file of stillPending) {
+          const imgApiBase = `https://api.github.com/repos/${ghOwner}/${ghRepo}/contents/public/${file.publicPath}`;
+          // Try to get existing SHA (file may already exist)
+          let existingSha: string | null = null;
+          try {
+            const r = await fetch(`${imgApiBase}?ref=${ghBranch}`, { headers });
+            if (r.ok) { const j = await r.json() as { sha: string }; existingSha = j.sha; }
+          } catch { /* new file, no SHA needed */ }
+          await putGitHubFile(
+            `public/${file.publicPath}`,
+            file.dataBase64,
+            existingSha,
+            `Upload image: ${file.name}`,
+            headers
+          );
+        }
+        setPendingUploads([]);
+      }
 
-      setDeployMsg("Committing changes...");
-
+      // 2. Commit portfolioData.json
+      setDeployMsg("Committing portfolio data...");
+      const jsonApiBase = `https://api.github.com/repos/${ghOwner}/${ghRepo}/contents/src/data/portfolioData.json`;
+      const sha = await getFileSha(jsonApiBase, headers, ghBranch);
       const content = btoa(unescape(encodeURIComponent(jsonPayload)));
-      const putRes = await fetch(apiBase, {
-        method: "PUT",
-        headers,
-        body: JSON.stringify({
-          message: "Portfolio update via Admin Dashboard",
-          content,
-          sha,
-          branch: ghBranch,
-        }),
-      });
-      if (!putRes.ok) throw new Error(`Commit failed: ${putRes.status} ${await putRes.text()}`);
+      await putGitHubFile("src/data/portfolioData.json", content, sha, "Portfolio update via Admin Dashboard", headers);
 
       setDeployStatus("ok");
-      setDeployMsg("Committed! GitHub Actions is now rebuilding your site (~60 sec).");
+      setDeployMsg(`Done! ${stillPending.length} image(s) uploaded. GitHub Actions is rebuilding your site (~60 sec).`);
     } catch (e: unknown) {
       setDeployStatus("err");
       setDeployMsg(e instanceof Error ? e.message : String(e));
@@ -270,6 +307,7 @@ export default function Admin() {
           <ProjectsManager
             projects={data.projects as ProjectEntry[]}
             onChange={updateProjects}
+            onPendingFiles={mergePending}
           />
         )}
 

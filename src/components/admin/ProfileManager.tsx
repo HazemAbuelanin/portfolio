@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus, X } from "lucide-react";
+import ImageUploader from "./ImageUploader";
 
 interface Profile {
   name: string;
@@ -63,11 +64,13 @@ export default function ProfileManager({ profile, onChange }: Props) {
             <input className="w-full bg-zinc-700 border border-zinc-600 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"
               value={profile.role} onChange={e => set("role", e.target.value)} />
           </div>
-          <div>
-            <label className="block text-xs text-zinc-400 mb-1">Profile Image Path <span className="text-zinc-500">(relative to public/)</span></label>
-            <input className="w-full bg-zinc-700 border border-zinc-600 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 font-mono"
-              placeholder="lovable-uploads/your-photo.png"
-              value={profile.profileImage} onChange={e => set("profileImage", e.target.value)} />
+          <div className="md:col-span-2">
+            <ImageUploader
+              images={profile.profileImage ? [profile.profileImage] : []}
+              onImagesChange={paths => set("profileImage", paths[0] ?? "")}
+              single
+              label="Profile Picture"
+            />
           </div>
           <div>
             <label className="block text-xs text-zinc-400 mb-1">Resume PDF Path <span className="text-zinc-500">(relative to public/)</span></label>

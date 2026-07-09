@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { GripVertical, Pencil, Trash2, Plus, Star, ChevronUp, ChevronDown } from "lucide-react";
 import ProjectModal, { type ProjectEntry } from "./ProjectModal";
+import type { PendingFile } from "./ImageUploader";
 
 interface Props {
   projects: ProjectEntry[];
   onChange: (projects: ProjectEntry[]) => void;
+  onPendingFiles?: (files: PendingFile[]) => void;
 }
 
-export default function ProjectsManager({ projects, onChange }: Props) {
+export default function ProjectsManager({ projects, onChange, onPendingFiles }: Props) {
   const [editing, setEditing] = useState<ProjectEntry | null>(null);
   const [isNew, setIsNew] = useState(false);
   const [draggingIdx, setDraggingIdx] = useState<number | null>(null);
@@ -17,7 +19,8 @@ export default function ProjectsManager({ projects, onChange }: Props) {
   const openEdit = (p: ProjectEntry) => { setEditing(p); setIsNew(false); };
   const closeModal = () => { setEditing(null); setIsNew(false); };
 
-  const saveProject = (p: ProjectEntry) => {
+  const saveProject = (p: ProjectEntry, pendingFiles: PendingFile[]) => {
+    if (pendingFiles.length) onPendingFiles?.(pendingFiles);
     if (isNew) {
       onChange([...projects, p]);
     } else {

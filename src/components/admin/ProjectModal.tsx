@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { X, Plus, Trash2 } from "lucide-react";
+import { X, Plus } from "lucide-react";
+import ImageUploader, { type PendingFile } from "./ImageUploader";
 
 export interface ProjectEntry {
   slug: string;
@@ -19,7 +20,7 @@ export interface ProjectEntry {
 
 interface Props {
   project: ProjectEntry | null;
-  onSave: (p: ProjectEntry) => void;
+  onSave: (p: ProjectEntry, pendingFiles: PendingFile[]) => void;
   onClose: () => void;
 }
 
@@ -42,12 +43,12 @@ const emptyProject: ProjectEntry = {
 export default function ProjectModal({ project, onSave, onClose }: Props) {
   const [form, setForm] = useState<ProjectEntry>(project ?? { ...emptyProject });
   const [skillInput, setSkillInput] = useState("");
-  const [imageInput, setImageInput] = useState("");
+  const [pendingFiles, setPendingFiles] = useState<PendingFile[]>([]);
 
   useEffect(() => {
     setForm(project ?? { ...emptyProject });
     setSkillInput("");
-    setImageInput("");
+    setPendingFiles([]);
   }, [project]);
 
   const set = (key: keyof ProjectEntry, val: unknown) =>
@@ -64,17 +65,9 @@ export default function ProjectModal({ project, onSave, onClose }: Props) {
 
   const removeSkill = (s: string) => set("skills", form.skills.filter(x => x !== s));
 
-  const addImage = () => {
-    const s = imageInput.trim();
-    if (s) set("images", [...form.images, s]);
-    setImageInput("");
-  };
-
-  const removeImage = (i: number) => set("images", form.images.filter((_, idx) => idx !== i));
-
   const handleSubmit = () => {
     if (!form.slug) form.slug = autoSlug(form.cardTitle);
-    onSave(form);
+    onSave(form, pendingFiles);
   };
 
   return (
@@ -231,32 +224,13 @@ export default function ProjectModal({ project, onSave, onClose }: Props) {
             </div>
           </div>
 
-          {/* Images */}
-          <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">
-              Images <span className="text-zinc-500 text-xs">(paths relative to public/, e.g. lovable-uploads/img.png)</span>
-            </label>
-            <div className="flex gap-2 mb-2">
-              <input
-                className="flex-1 bg-zinc-800 border border-zinc-600 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"
-                placeholder="lovable-uploads/my-image.png"
-                value={imageInput}
-                onChange={e => setImageInput(e.target.value)}
-                onKeyDown={e => e.key === "Enter" && (e.preventDefault(), addImage())}
-              />
-              <button onClick={addImage} className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-1">
-                <Plus size={14} /> Add
-              </button>
-            </div>
-            {form.images.map((img, i) => (
-              <div key={i} className="flex items-center gap-2 bg-zinc-800 rounded-lg px-3 py-2 mb-1 text-sm text-zinc-300">
-                <span className="flex-1 font-mono text-xs truncate">{img}</span>
-                <button onClick={() => removeImage(i)} className="text-red-400 hover:text-red-300 transition-colors">
-                  <Trash2 size={14} />
-                </button>
-              </div>
-            ))}
-          </div>
+          {/* Images — Drag & Drop */}
+          <ImageUploader
+            images={form.images}
+            onImagesChange={paths => set("images", paths)}
+            onPendingFiles={setPendingFiles}
+            label="Project Images"
+          />
 
           {/* Article HTML */}
           <div>

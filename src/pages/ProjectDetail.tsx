@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,6 +15,7 @@ function getYouTubeId(url: string): string | null {
 const ProjectDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   const project = data.projects.find(p => p.slug === slug) ?? null;
 
@@ -99,22 +101,41 @@ const ProjectDetail = () => {
                 {project.youtubeUrl && project.youtubeUrl.trim() !== "" && getYouTubeId(project.youtubeUrl) && (
                   <div className="mb-6">
                     <h4 className="text-lg font-medium text-gray-300 mb-3">Project Video</h4>
-                    <div
-                      className="relative aspect-video rounded-lg overflow-hidden cursor-pointer group"
-                      onClick={() => window.open(project.youtubeUrl, "_blank")}
-                      style={{ maxWidth: 640, margin: "0 auto" }}
-                    >
-                      <img
-                        src={`https://img.youtube.com/vi/${getYouTubeId(project.youtubeUrl!)}/hqdefault.jpg`}
-                        alt="YouTube Video Thumbnail"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition">
-                        <svg className="w-16 h-16 text-white opacity-90" fill="currentColor" viewBox="0 0 84 84">
-                          <circle cx="42" cy="42" r="42" fill="black" fillOpacity="0.6"/>
-                          <polygon points="34,28 60,42 34,56" fill="white"/>
-                        </svg>
-                      </div>
+                    <div className="relative aspect-video rounded-lg overflow-hidden" style={{ maxWidth: 640, margin: "0 auto" }}>
+                      {videoPlaying ? (
+                        <iframe
+                          className="w-full h-full"
+                          src={`https://www.youtube.com/embed/${getYouTubeId(project.youtubeUrl)}?autoplay=1&rel=0`}
+                          title="Project Video"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      ) : (
+                        <div
+                          className="relative w-full h-full cursor-pointer group"
+                          onClick={() => setVideoPlaying(true)}
+                        >
+                          <img
+                            src={`https://img.youtube.com/vi/${getYouTubeId(project.youtubeUrl)}/maxresdefault.jpg`}
+                            alt="Video thumbnail"
+                            className="w-full h-full object-cover"
+                            onError={e => {
+                              (e.target as HTMLImageElement).src =
+                                `https://img.youtube.com/vi/${getYouTubeId(project.youtubeUrl)}/hqdefault.jpg`;
+                            }}
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/55 transition-all duration-200">
+                            <div className="w-16 h-16 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center shadow-2xl transition-transform duration-200 group-hover:scale-110">
+                              <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            ▶ Click to play
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
